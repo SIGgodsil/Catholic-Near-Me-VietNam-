@@ -28,7 +28,10 @@ CREATE TABLE churches (
     latitude REAL,
     longitude REAL,
     parish_url TEXT,
-    mass_url TEXT
+    mass_url TEXT,
+    phone TEXT,                    -- cột tùy chọn, dataset hiện tại chưa có
+    email TEXT,
+    website TEXT
 );
 CREATE TABLE masses (
     church_id INTEGER NOT NULL REFERENCES churches(id),
@@ -40,7 +43,14 @@ CREATE TABLE masses (
 CREATE INDEX idx_masses_dow_min ON masses(dow, minutes);
 """
 
+OPTIONAL_TEXT = ["phone", "email", "website"]
 REQUIRED = ["church_id", "display_name", "tgpsg_parish_name", "tgpsg_parish_address", "day_of_week", "mass_time"]
+
+
+def _opt(r: dict, col: str) -> str | None:
+    """Giá trị cột tùy chọn; ô trống hoặc 'nan'/'None' do pandas xuất ra thành NULL."""
+    v = (r.get(col) or "").strip()
+    return None if v.lower() in ("", "nan", "none", "null") else v
 
 
 def build(csv_path: Path, db_path: Path) -> None:
@@ -67,8 +77,8 @@ def build(csv_path: Path, db_path: Path) -> None:
             districts, wards = parse_address(r["tgpsg_parish_address"])
             cur = con.execute(
                 "INSERT INTO churches (church_id, name, parish_name, name_norm, address, address_norm,"
-                " districts, districts_norm, wards, wards_norm, latitude, longitude, parish_url, mass_url)"
-                " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                " districts, districts_norm, wards, wards_norm, latitude, longitude, parish_url, mass_url,"
+                " phone, email, website) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (
                     key, r["display_name"].strip(), r["tgpsg_parish_name"].strip(),
                     norm_name(r["tgpsg_parish_name"]),
@@ -78,6 +88,7 @@ def build(csv_path: Path, db_path: Path) -> None:
                     float(r["latitude"]) if r.get("latitude") else None,
                     float(r["longitude"]) if r.get("longitude") else None,
                     r.get("tgpsg_parish_url", "").strip(), r.get("parish_mass_time_url", "").strip(),
+                    *(_opt(r, c) for c in OPTIONAL_TEXT),
                 ),
             )
             ids[key] = cur.lastrowid
@@ -101,4 +112,5 @@ def build(csv_path: Path, db_path: Path) -> None:
 
 
 if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
     build(Path(sys.argv[1]) if len(sys.argv) > 1 else SOURCE_CSV, DB_PATH)

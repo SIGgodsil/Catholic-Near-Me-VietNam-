@@ -47,7 +47,12 @@ def describe_place_filter(f: Filters) -> str:
 
 def schedule_lines(masses: dict[int, list[str]]) -> list[str]:
     """Gộp các ngày liên tiếp có cùng giờ lễ: 'Thứ Hai – Thứ Sáu: 5:00, 17:30'."""
-    lines, d = [], 0
+    return [f"{label}: {', '.join(times)}" for label, times in schedule_groups(masses)]
+
+
+def schedule_groups(masses: dict[int, list[str]]) -> list[tuple[str, list[str]]]:
+    """[('Thứ Hai – Thứ Sáu', ['5:00', '17:30']), ('Chúa Nhật', [...])]"""
+    groups, d = [], 0
     while d < 7:
         if d not in masses:
             d += 1
@@ -56,9 +61,9 @@ def schedule_lines(masses: dict[int, list[str]]) -> list[str]:
         while end + 1 < 7 and masses.get(end + 1) == masses[d]:
             end += 1
         label = DAY_LABELS[d] if end == d else f"{DAY_LABELS[d]} – {DAY_LABELS[end]}"
-        lines.append(f"{label}: {', '.join(masses[d])}")
+        groups.append((label, masses[d]))
         d = end + 1
-    return lines
+    return groups
 
 
 def hit_markdown(h: ChurchHit, show_schedule: bool = True) -> str:

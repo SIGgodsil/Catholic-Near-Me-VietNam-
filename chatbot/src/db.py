@@ -72,8 +72,23 @@ def _churches() -> list[dict]:
     return rows
 
 
+def churches() -> list[dict]:
+    return _churches()
+
+
+@lru_cache(maxsize=1)
+def all_masses() -> dict[int, list[tuple[int, int, str]]]:
+    """id nhà thờ -> [(thứ, phút từ 0:00, 'H:MM')], sắp theo thứ rồi giờ."""
+    out: dict[int, list[tuple[int, int, str]]] = {}
+    with _connect() as con:
+        for r in con.execute("SELECT church_id, dow, minutes, time FROM masses ORDER BY church_id, dow, minutes"):
+            out.setdefault(r["church_id"], []).append((r["dow"], r["minutes"], r["time"]))
+    return out
+
+
 def reload() -> None:
     _churches.cache_clear()
+    all_masses.cache_clear()
 
 
 def _contains_words(haystack: str, needle: str) -> bool:
