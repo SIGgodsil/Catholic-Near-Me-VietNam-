@@ -4,7 +4,7 @@
     {
       "name": "catholic-near-me",
       "runtimeExecutable": "chatbot/.venv/Scripts/python.exe",
-      "runtimeArgs": ["-m", "uvicorn", "server.main:app", "--app-dir", "chatbot", "--host", "127.0.0.1", "--port", "8000", "--reload", "--reload-dir", "chatbot/server", "--reload-dir", "chatbot/src"],
+      "runtimeArgs": ["-m", "uvicorn", "server.main:app", "--app-dir", "chatbot", "--host", "127.0.0.1", "--port", "8000"],
       "port": 8000
     }
   ]

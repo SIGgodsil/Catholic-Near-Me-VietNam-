@@ -27,9 +27,13 @@ function contactHtml(c) {
 
 export function nextMassHtml(c) {
   if (!c.next_mass) return "";
-  const m = c.next_mass;
+  return `<p class="pp-next">${esc(nextMassText(c.next_mass))}</p>`;
+}
+
+// "Lễ lúc 17:30, còn 45 phút" / "Lễ lúc 00:30 (ngày mai), còn 90 phút"
+export function nextMassText(m) {
   const when = m.minutes_until === 0 ? "bắt đầu ngay bây giờ" : `còn ${m.minutes_until} phút`;
-  return `<p class="pp-next">Lễ lúc ${esc(m.time)}${m.day_label ? ` (${esc(m.day_label)})` : ""}, ${when}</p>`;
+  return `Lễ lúc ${m.time}${m.tomorrow ? " (ngày mai)" : ""}, ${when}`;
 }
 
 export function popupHtml(c, from) {

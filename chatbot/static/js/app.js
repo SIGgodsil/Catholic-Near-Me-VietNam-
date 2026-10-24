@@ -2,10 +2,12 @@
 import { fetchNearby, geocode } from "./api.js";
 import { esc, formatDistance } from "./format.js";
 import { createMap } from "./map.js";
+import { nextMassText } from "./popup.js";
 
 const RADIUS_KM = 3;
 const POOR_ACCURACY_M = 500; // sai số GPS lớn hơn mức này thì gợi ý nhập địa chỉ
 const GEO_OPTIONS = { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 };
+const REFRESH_MS = 60_000; // cập nhật "còn X phút" và ghim lễ sắp diễn ra
 
 const els = {
   locateBtn: document.getElementById("locate-btn"),
@@ -49,7 +51,7 @@ function renderList(churches) {
           <span class="ci-name">${esc(c.name)}</span>
           <span class="ci-dist">${formatDistance(c.distance_km)}</span>
           ${c.address ? `<span class="ci-addr">${esc(c.address)}</span>` : ""}
-          ${c.next_mass ? `<span class="ci-next">Lễ lúc ${esc(c.next_mass.time)}, còn ${c.next_mass.minutes_until} phút</span>` : ""}
+          ${c.next_mass ? `<span class="ci-next">${esc(nextMassText(c.next_mass))}</span>` : ""}
         </button>
       </li>`,
     )
@@ -69,7 +71,29 @@ els.list.addEventListener("click", (e) => {
 
 // ---------- Tìm quanh một vị trí ----------
 
+let refreshTimer = null;
+
+function upcomingNote(churches) {
+  const n = churches.filter((c) => c.next_mass).length;
+  return n ? `${n} nhà thờ có lễ trong 2 giờ tới (ghim đỏ).` : "Không có nhà thờ nào có lễ trong 2 giờ tới.";
+}
+
+// Lấy lại dữ liệu im lặng, không đổi khung nhìn, giữ popup đang mở.
+async function refresh() {
+  if (!state.location || document.hidden) return;
+  try {
+    const data = await fetchNearby(state.location.lat, state.location.lon, RADIUS_KM);
+    map.showChurches(data.churches, { keepOpen: true });
+    renderList(data.churches);
+    const note = els.status.querySelector(".upcoming-note");
+    if (note) note.textContent = upcomingNote(data.churches);
+  } catch {
+    // Lần sau thử lại; không làm phiền người dùng vì dữ liệu cũ vẫn đang hiển thị.
+  }
+}
+
 async function searchAround(lat, lon, { label, accuracyM, warning } = {}) {
+  clearInterval(refreshTimer);
   state.location = { lat, lon, label };
   map.showUser(lat, lon, { radiusKm: RADIUS_KM, accuracyM, label });
   map.showChurches([]);
@@ -90,6 +114,11 @@ async function searchAround(lat, lon, { label, accuracyM, warning } = {}) {
       );
     } else {
       setStatus(warning ? "warn" : "", `Có ${data.count} nhà thờ trong bán kính ${RADIUS_KM} km`, `Tìm ${where}. Bấm vào ghim hoặc tên nhà thờ để xem giờ lễ.`, warning);
+      const note = document.createElement("p");
+      note.className = "note upcoming-note";
+      note.textContent = upcomingNote(data.churches);
+      els.status.append(note);
+      refreshTimer = setInterval(refresh, REFRESH_MS);
     }
   } catch (err) {
     setStatus("error", "Không tải được danh sách nhà thờ.", err.message);

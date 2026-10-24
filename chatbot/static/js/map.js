@@ -52,7 +52,9 @@ export function createMap(element, { onChurchSelect } = {}) {
     map.fitBounds(radiusCircle.getBounds(), { padding: [20, 20] });
   }
 
-  function showChurches(churches) {
+  // keepOpen: làm mới dữ liệu (số phút còn lại) mà vẫn giữ popup đang mở.
+  function showChurches(churches, { keepOpen = false } = {}) {
+    const openId = keepOpen ? [...markers].find(([, mk]) => mk.isPopupOpen())?.[0] : undefined;
     churchLayer.clearLayers();
     markers.clear();
     for (const c of churches) {
@@ -69,6 +71,7 @@ export function createMap(element, { onChurchSelect } = {}) {
         .addTo(churchLayer);
       markers.set(c.id, marker);
     }
+    if (openId !== undefined) markers.get(openId)?.openPopup();
   }
 
   function openChurch(id) {

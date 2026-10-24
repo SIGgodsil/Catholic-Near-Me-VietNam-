@@ -14,8 +14,12 @@ async function getJson(url, fallbackMessage) {
   return res.json();
 }
 
+// Thử giao diện ở thời điểm khác: mở trang với ?at=2026-10-25T16:30
+const SIMULATED_AT = new URLSearchParams(location.search).get("at");
+
 export function fetchNearby(lat, lon, radiusKm) {
   const qs = new URLSearchParams({ lat, lon, radius_km: radiusKm });
+  if (SIMULATED_AT) qs.set("at", SIMULATED_AT);
   return getJson(`/api/churches/nearby?${qs}`, "Không tải được danh sách nhà thờ.");
 }
 

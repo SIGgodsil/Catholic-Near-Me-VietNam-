@@ -36,3 +36,36 @@ def test_nearby_empty_far_away():
 def test_nearby_rejects_invalid_coordinates():
     assert client.get("/api/churches/nearby", params={"lat": 100, "lon": 106}).status_code == 422
     assert client.get("/api/churches/nearby", params={"lat": 10.7, "lon": 106.7, "radius_km": 0}).status_code == 422
+
+
+def test_next_mass_marked_in_nearby():
+    import datetime as dt
+
+    from src.db import all_masses
+    from src.nearby import find_nearby
+    from src.schedule import TZ
+
+    c = churches()[0]
+    dow, minutes, _ = all_masses()[c["id"]][0]
+    # Chọn thời điểm 30 phút trước lễ đầu tiên của nhà thờ này, đúng thứ trong tuần.
+    day = dt.date(2026, 10, 19) + dt.timedelta(days=dow)  # 19/10/2026 là Thứ Hai
+    start = dt.datetime.combine(day, dt.time(minutes // 60, minutes % 60), TZ)
+    found = find_nearby(c["latitude"], c["longitude"], 0.01, now=start - dt.timedelta(minutes=30))
+    assert found[0]["id"] == c["id"]
+    nm = found[0]["next_mass"]
+    assert nm["minutes_until"] == 30 and nm["time"] == start.strftime("%H:%M")
+
+
+def test_schedule_times_are_hh_mm():
+    c = churches()[0]
+    body = client.get("/api/churches/nearby", params={"lat": c["latitude"], "lon": c["longitude"]}).json()
+    times = [t for ch in body["churches"] for g in ch["schedule"] for t in g["times"]]
+    assert times and all(len(t) == 5 and t[2] == ":" for t in times)
+    assert body["server_time"].endswith("+07:00")
+
+
+def test_simulated_time_parameter():
+    c = churches()[0]
+    params = {"lat": c["latitude"], "lon": c["longitude"], "at": "2026-10-25T16:30"}
+    body = client.get("/api/churches/nearby", params=params).json()
+    assert body["server_time"] == "2026-10-25T16:30:00+07:00"
