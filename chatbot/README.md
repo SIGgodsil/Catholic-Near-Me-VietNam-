@@ -164,7 +164,6 @@ chatbot/
     nearby.py          dữ liệu nhà thờ cho bản đồ
     schedule.py        lễ sắp diễn ra (Asia/Ho_Chi_Minh)
   tests/               pytest + eval.py (Ollama thật)
-  app.py               giao diện Streamlit cũ (sẽ bỏ)
 ```
 
 ## Ghi chú kỹ thuật
@@ -174,3 +173,7 @@ chatbot/
 - Màu: vàng đồng `#C9A13B` chỉ dùng để trang trí (độ tương phản 2,4:1); chữ và nút dùng đồng đậm `#7A5410`
   (6,8:1 trên nền trắng, đạt WCAG AA).
 - Ghim đỏ `#B42318` dành cho nhà thờ có lễ sắp diễn ra; marker người dùng là chấm xanh.
+- Giao diện Streamlit cũ (`app.py`) đã bị xóa. Các tùy chọn trong sidebar cũ nay thay bằng:
+  - đổi model: dùng biến môi trường `OLLAMA_MODEL`;
+  - "LLM viết câu mở đầu": vẫn còn trong code (`answer(..., use_llm_intro=True)`, `tests\eval.py --llm-intro`) nhưng web không bật;
+  - xem bộ lọc đã trích: có trong `debug` khi chạy `eval.py`.
