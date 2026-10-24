@@ -8,7 +8,7 @@ import ollama
 from pydantic import BaseModel, Field
 from rapidfuzz import fuzz
 
-from .config import OLLAMA_HOST, OLLAMA_MODEL
+from .config import OLLAMA_HOST, OLLAMA_MODEL, OLLAMA_TIMEOUT
 from .db import Filters
 from .normalize import norm
 
@@ -69,7 +69,7 @@ Q: Nhà thờ trên đường Lê Văn Sỹ
 Q: Hôm nay trời có mưa không?
 {"y_dinh":"khac","ten_nha_tho":null,"quan":null,"phuong":null,"dia_diem":null,"giao_phan":null,"thu":[],"buoi":null,"gio_tu":null,"gio_den":null}"""
 
-_client = ollama.Client(host=OLLAMA_HOST)
+_client = ollama.Client(host=OLLAMA_HOST, timeout=OLLAMA_TIMEOUT)
 
 
 def llm_extract(question: str, model: str = OLLAMA_MODEL) -> LLMFilters:
@@ -106,7 +106,7 @@ def rule_days(question: str, today: dt.date | None = None) -> list[int]:
     for pat, ds in _DAY_PATTERNS:
         if re.search(pat, q):
             days.update(ds)
-    if re.search(r"\bhom\s*nay\b", q):
+    if re.search(r"\bhom\s*nay\b|\b(?:sang|trua|chieu|toi|dem)\s+nay\b", q):  # "tối nay" = hôm nay
         days.add(today.weekday())
     if re.search(r"\bngay\s*mai\b", q):
         days.add((today.weekday() + 1) % 7)

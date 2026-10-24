@@ -6,8 +6,9 @@ from .answer import (MAX_DETAILED, describe_place_filter, describe_time_filter, 
                      llm_intro, template_intro)
 from .config import OLLAMA_MODEL
 from .context import Context, ContextInfo, apply_context, has_entity
-from .db import ChurchHit, Filters, search, suggest_names
+from .db import ChurchHit, Filters, churches, search, suggest_names
 from .extract import extract
+from .geo import haversine_km, within_radius
 from .normalize import norm
 
 
@@ -22,6 +23,11 @@ class BotResponse:
 
 
 SCOPE_NOTE = "Dữ liệu hiện có 80 nhà thờ thuộc Tổng Giáo phận Sài Gòn (nguồn tgpsaigon.net)."
+
+NEAR_RADIUS_KM = 3.0
+# "gần tôi", "gần đây", "gần nhất", "quanh đây"...
+_NEAR_RE = re.compile(
+    r"\bgan\s+(?:toi|day|nha|minh|em|chau|nhat|khu nay|cho nay)\b|\b(?:quanh|xung quanh|lan can)\s+(?:day|toi|nha)\b")
 
 
 def _has_time(f: Filters) -> bool:
@@ -40,23 +46,48 @@ def _context_note(f: Filters, info: ContextInfo, prev_hits: int) -> str:
     return f"_Hiểu theo câu trước: {', '.join(parts)}._" if parts else ""
 
 
+def _near_ids(near: tuple[float, float]) -> list[int]:
+    """Nhà thờ trong NEAR_RADIUS_KM quanh vị trí, gần nhất trước."""
+    hits = within_radius(churches(), *near, NEAR_RADIUS_KM, lambda c: (c["latitude"], c["longitude"]))
+    return [c["id"] for c, _ in hits]
+
+
 def answer(question: str, use_llm_intro: bool = False, model: str = OLLAMA_MODEL,
-           context: Context | None = None) -> BotResponse:
+           context: Context | None = None, near: tuple[float, float] | None = None) -> BotResponse:
+    """near: (vĩ độ, kinh độ) của người dùng nếu có, dùng cho câu hỏi "gần tôi" và để ghi khoảng cách."""
     t0 = time.time()
     f, debug = extract(question, model)
     debug["t_extract"] = round(time.time() - t0, 1)
 
-    if not has_entity(f) and re.search(
-            r"\bgan\s+(?:toi|day|nha|minh|em|chau|nhat|khu nay|cho nay)\b|\b(?:quanh|xung quanh|lan can)\s+(?:day|toi|nha)\b",
-            norm(question)):
-        resp = BotResponse("Mình chưa biết vị trí của bạn. Bạn cho mình biết quận, phường hoặc tên đường "
-                           "để mình tìm nhà thờ gần đó nhé.", status="clarify")
-    else:
+    asks_near = bool(_NEAR_RE.search(norm(question)))
+    if asks_near:
+        # LLM đôi khi trích luôn "gần tôi" làm địa điểm.
+        for k in ("place", "district", "ward"):
+            if getattr(f, k) and _NEAR_RE.search(norm(getattr(f, k))):
+                setattr(f, k, None)
+
+    near_note = ""
+    resp = None
+    if not has_entity(f) and asks_near:
+        if near is None:
+            resp = BotResponse("Mình chưa biết vị trí của bạn. Bạn bấm “Tìm nhà thờ gần tôi” trên bản đồ, hoặc cho mình "
+                               "biết quận, phường hay tên đường để mình tìm nhà thờ gần đó nhé.", status="clarify")
+        elif not (ids := _near_ids(near)):
+            resp = BotResponse(f"Không có nhà thờ nào trong bán kính {NEAR_RADIUS_KM:g} km quanh vị trí của bạn. "
+                               f"{SCOPE_NOTE}", status="not_found")
+        else:
+            f.church_ids = ids
+            near_note = f"_Các nhà thờ trong bán kính {NEAR_RADIUS_KM:g} km quanh vị trí của bạn, gần nhất trước._"
+            debug["near"] = {"radius_km": NEAR_RADIUS_KM, "n": len(ids)}
+
+    if resp is None:
         f, info = apply_context(question, f, context)
         if info.any():
             debug["context"] = info.__dict__
             debug["final"] = {k: v for k, v in f.__dict__.items() if v not in (None, [])}
-        resp = _answer(question, f, use_llm_intro, model)
+        resp = _answer(question, f, use_llm_intro, model, near)
+        if near_note and resp.status == "ok":
+            resp.text = f"{near_note}\n\n{resp.text}"
         note = _context_note(f, info, len(context.hit_ids) if context else 0)
         if note and resp.status != "clarify":
             resp.text = f"{note}\n\n{resp.text}"
@@ -69,7 +100,8 @@ def answer(question: str, use_llm_intro: bool = False, model: str = OLLAMA_MODEL
     return resp
 
 
-def _answer(question: str, f: Filters, use_llm_intro: bool, model: str) -> BotResponse:
+def _answer(question: str, f: Filters, use_llm_intro: bool, model: str,
+            near: tuple[float, float] | None = None) -> BotResponse:
     # Không xét thứ/giờ ở đây: "hôm nay thời tiết..." vẫn sinh ra bộ lọc ngày từ luật.
     if f.intent == "khac" and not has_entity(f):
         return BotResponse("Mình chỉ hỗ trợ tra cứu nhà thờ và giờ lễ. " + SCOPE_NOTE, status="out_of_scope")
@@ -94,6 +126,12 @@ def _answer(question: str, f: Filters, use_llm_intro: bool, model: str) -> BotRe
                            status="not_found")
 
     hits = result.hits
+    if near:
+        by_id = {c["id"]: c for c in churches()}
+        for h in hits:
+            c = by_id[h.id]
+            if c["latitude"] is not None and c["longitude"] is not None:
+                h.distance_km = haversine_km(*near, c["latitude"], c["longitude"])
     parts = []
     approx = [h for h in hits if h.match == "approx"]
     if f.name and approx:

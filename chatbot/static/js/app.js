@@ -3,6 +3,7 @@ import { fetchNearby, geocode } from "./api.js";
 import { esc, formatDistance } from "./format.js";
 import { createMap } from "./map.js";
 import { nextMassText } from "./popup.js";
+import { state } from "./state.js";
 
 const RADIUS_KM = 3;
 const POOR_ACCURACY_M = 500; // sai số GPS lớn hơn mức này thì gợi ý nhập địa chỉ
@@ -20,8 +21,6 @@ const els = {
 
 const map = createMap(document.getElementById("map"), { onChurchSelect: highlightListItem });
 
-// Vị trí hiện tại để module khác (chatbot) dùng.
-export const state = { location: null };
 
 // ---------- Trạng thái ----------
 

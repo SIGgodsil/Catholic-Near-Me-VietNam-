@@ -56,8 +56,43 @@
     </div>
   </main>
 
+  <!-- Chatbot: nút nổi + cửa sổ chat -->
+  <button id="chat-fab" class="chat-fab" type="button" aria-controls="chat-panel" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2zm3 6v2h2v-2H7zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2z"/></svg>
+    <span>Hỏi giờ lễ</span>
+  </button>
+
+  <section id="chat-panel" class="chat-panel" aria-label="Trợ lý giờ lễ" hidden>
+    <header class="chat-header">
+      <div class="chat-title">
+        <span class="chat-title-main">Trợ lý giờ lễ</span>
+        <span id="chat-subtitle" class="chat-title-sub">Trả lời dựa trên dữ liệu 80 nhà thờ</span>
+      </div>
+      <button id="chat-reset" class="chat-icon-btn" type="button" title="Bắt đầu hội thoại mới" aria-label="Bắt đầu hội thoại mới">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg>
+      </button>
+      <button id="chat-minimize" class="chat-icon-btn" type="button" title="Thu nhỏ" aria-label="Thu nhỏ cửa sổ chat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h14v2H5z"/></svg>
+      </button>
+      <button id="chat-close" class="chat-icon-btn" type="button" title="Đóng" aria-label="Đóng cửa sổ chat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 5 5 6.4 10.6 12 5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6L19 6.4 17.6 5 12 10.6z"/></svg>
+      </button>
+    </header>
+    <div class="chat-body">
+      <div id="chat-log" class="chat-log" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <form id="chat-form" class="chat-form" autocomplete="off">
+        <label for="chat-input" class="sr-only">Câu hỏi</label>
+        <textarea id="chat-input" rows="1" maxlength="500" placeholder="Hỏi về giờ lễ, nhà thờ…"></textarea>
+        <button id="chat-send" class="btn btn-primary chat-send" type="submit" aria-label="Gửi câu hỏi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5 21 12 3 3.5 3 10l12 2-12 2z"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/chat.js"></script>
 </body>
 </html>

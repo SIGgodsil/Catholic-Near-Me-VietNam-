@@ -44,6 +44,7 @@ class ChurchHit:
     match: str = "exact"               # exact | approx
     score: float = 100.0
     masses: dict[int, list[str]] = field(default_factory=dict)
+    distance_km: float | None = None   # có khi biết vị trí người dùng
 
 
 @dataclass
@@ -205,8 +206,9 @@ def search(f: Filters) -> SearchResult:
 
     candidates = churches
     if f.church_ids:
-        allowed = set(f.church_ids)
-        candidates = [c for c in candidates if c["id"] in allowed]
+        # Giữ thứ tự của church_ids (vd. gần nhất trước khi tìm quanh vị trí người dùng).
+        order = {cid: i for i, cid in enumerate(f.church_ids)}
+        candidates = sorted((c for c in candidates if c["id"] in order), key=lambda c: order[c["id"]])
     for raw, kind, label in ((f.district, "district", "quận"), (f.ward, "ward", "phường"), (f.place, "place", "khu vực")):
         if not raw:
             continue

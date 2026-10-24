@@ -3,7 +3,7 @@ import re
 
 import ollama
 
-from .config import OLLAMA_HOST, OLLAMA_MODEL
+from .config import OLLAMA_HOST, OLLAMA_MODEL, OLLAMA_TIMEOUT
 from .db import ChurchHit, Filters
 from .extract import PERIODS
 from .normalize import DAY_LABELS
@@ -11,7 +11,14 @@ from .normalize import DAY_LABELS
 MAX_DETAILED = 8
 PERIOD_LABELS = {"sang": "sáng", "trua": "trưa", "chieu": "chiều", "toi": "tối"}
 
-_client = ollama.Client(host=OLLAMA_HOST)
+_client = ollama.Client(host=OLLAMA_HOST, timeout=OLLAMA_TIMEOUT)
+
+
+def fmt_km(km: float) -> str:
+    """0.76 -> '760 m', 1.32 -> '1,3 km'."""
+    if km < 1:
+        return f"{max(10, round(km * 100) * 10)} m"
+    return f"{km:.1f}".replace(".", ",") + " km"
 
 
 def fmt_minutes(m: int) -> str:
@@ -67,7 +74,7 @@ def schedule_groups(masses: dict[int, list[str]]) -> list[tuple[str, list[str]]]
 
 
 def hit_markdown(h: ChurchHit, show_schedule: bool = True) -> str:
-    out = [f"**{h.name}** — {h.address}"]
+    out = [f"**{h.name}** — {h.address}" + (f" _(cách {fmt_km(h.distance_km)})_" if h.distance_km is not None else "")]
     if show_schedule:
         out += [f"- {line}" for line in schedule_lines(h.masses)] or ["- (không có giờ lễ phù hợp)"]
     if h.mass_url:
@@ -76,8 +83,13 @@ def hit_markdown(h: ChurchHit, show_schedule: bool = True) -> str:
 
 
 def hits_table(hits: list[ChurchHit]) -> list[dict]:
-    return [{"Nhà thờ": h.name, "Địa chỉ": h.address, "Giờ lễ": "; ".join(schedule_lines(h.masses)),
-             "Nguồn": h.mass_url} for h in hits]
+    rows = []
+    for h in hits:
+        row = {"Nhà thờ": h.name, "Địa chỉ": h.address}
+        if h.distance_km is not None:
+            row["Khoảng cách"] = fmt_km(h.distance_km)
+        rows.append({**row, "Giờ lễ": "; ".join(schedule_lines(h.masses)), "Nguồn": h.mass_url})
+    return rows
 
 
 def template_intro(f: Filters, hits: list[ChurchHit]) -> str:
