@@ -1,0 +1,24 @@
+CatholicNearMe — Báo cáo audit đối chiếu OSM/TGPSG
+Phạm vi: chỉ kiểm tra tên và trường dữ liệu; chưa xác minh thực tế địa điểm/giờ lễ.
+
+Đầu vào (encoding đọc: utf-8-sig):
+- dataset\osm_churches.csv: 163 dòng; 158 tên không trống duy nhất; 0 tên trống; 5 nhóm tên trùng.
+- dataset\tgpsaigon_parishes.csv: 207 dòng; 191 tên không trống duy nhất; 0 tên trống; 15 nhóm tên trùng.
+- dataset\tgpsaigon_mass_times.csv: 3160 dòng; 191 tên không trống duy nhất; 0 tên trống; 190 nhóm tên trùng.
+- Header lịch lễ thô: ['parish_name', 'parish_url', 'day_of_week', 'mass_time', 'parish_url', 'verification_status']; parish_url ở cột 2 và 5 (1-based). URL cột 2 có 204 giá trị duy nhất; cột 5 có 1. Không gán vai trò URL nguồn cho vị trí nào do header trùng.
+
+Kết quả ghép từ góc nhìn danh sách chuẩn OSM:
+- exact_match: 0
+- normalized_match: 75
+- needs_manual_review: 25
+- no_match: 63
+- Nhà thờ ghép chắc chắn với danh mục nhưng không có dòng lịch lễ tương ứng theo tên: 0
+- Bản ghi danh mục TGPSG chưa ghép chắc chắn với OSM: 132 (xem unmatched_tgpsg_parishes.csv; gồm cả needs_manual_review và no_match).
+- Vấn đề dữ liệu được ghi nhận: 88 dòng trong data_quality_issues.csv; trường hợp cần xem thủ công: 25 dòng OSM trong manual_review.csv.
+
+Hạn chế và lưu ý:
+- Match tự động chỉ dựa trên tên nguyên văn hoặc chuẩn hóa chữ hoa/thường, khoảng trắng, dấu câu; thử bỏ tiền tố Nhà thờ chỉ tạo match khi quan hệ là duy nhất.
+- Không dùng so sánh không dấu hoặc fuzzy để tự xác nhận; địa chỉ/tọa độ không được dùng để suy diễn khi thiếu.
+- Lịch lễ chỉ được liên kết qua bản ghi danh mục TGPSG đã ghép chắc chắn. Tên trùng trong lịch là nhiều dòng giờ lễ, không được coi là lỗi.
+- Header parish_url bị trùng. Phân bố URL thô khác nhau giữa hai vị trí nhưng không đủ để xác nhận ngữ nghĩa; source_url được ghi unresolved và không đoán cột. Cần chủ dữ liệu xác nhận cột sẽ mang tên parish_mass_time_url.
+- Không có tuyên bố xác minh thực tế nhà thờ hoặc giờ lễ. File nguồn không bị sửa.

@@ -1,0 +1,17 @@
+CatholicNearMe complete merge report
+
+churches_clean.csv: 80 rows; mass_times_clean.csv: 1287 rows.
+catholic_churches_complete.csv: 1287 rows; unique churches represented: 80; average valid mass rows per represented church: 16.09.
+INNER JOIN coverage: 1287/1287 mass rows had a church_id in churches_clean.csv; excluded by join: 0.
+Church keys: 80 unique non-empty church_id values; duplicate/blank keys: 0. Output mass_time_id values are unique: yes. No row multiplication: output row count equals matched input mass rows.
+
+Column preservation and overlap handling:
+- church_id: one join key column retained.
+- match_status: same value across each joined row; retained once.
+- match_confidence: same value across each joined row; retained once.
+- match_method: values differ; retained as church_match_method and mass_match_method.
+- match_reason: values differ; retained as church_match_reason and mass_match_reason.
+
+Value checks: church name, OSM ID, coordinates, parish name/URL and each mass day/time/URL were compared to their source rows and preserved. parish_mass_time_url, source_list_url, match status, confidence, method, reason, source verification and source columns are retained.
+Output order: church identifiers, parish information, coordinates, mass schedule, then remaining source and match/status fields.
+Input integrity: churches_clean.csv and mass_times_clean.csv SHA-256 hashes were unchanged.

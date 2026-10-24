@@ -1,0 +1,17 @@
+# Môi trường Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# File sinh ra khi chạy (tạo lại bằng chatbot/scripts/build_db.py)
+chatbot/data/*.db
+chatbot/data/*.tmp
+
+# Báo cáo Word, file tạm Office
+*.docx
+~$*
+
+# Cấu hình cá nhân của Claude Code
+.claude/settings.local.json

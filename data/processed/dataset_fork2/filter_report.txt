@@ -1,0 +1,42 @@
+CatholicNearMe - clean data filter report
+
+Input churches.csv: 163 rows; churches_clean.csv: 80 rows; excluded: 83.
+Input mass_times.csv: 3160 rows; mass_times_clean.csv: 1287 rows; excluded: 1873.
+Clean churches without a valid retained mass time: 0.
+
+Church exclusion counts by reason (overlap possible):
+- match_status_not_matched: 83
+- church_id_missing: 0
+- church_id_invalid: 0
+- church_id_duplicate: 0
+- osm_id_missing: 0
+- osm_id_invalid: 0
+- osm_id_duplicate: 0
+- church_id_osm_id_mismatch: 0
+- display_name_missing: 0
+- latitude_missing_or_invalid: 0
+- longitude_missing_or_invalid: 0
+- tgpsg_parish_name_missing: 83
+- tgpsg_parish_url_missing: 83
+- tgpsg_parish_url_invalid: 0
+
+Mass row exclusion counts by reason (overlap possible):
+- match_status_not_matched: 1872
+- church_id_missing: 1872
+- church_id_not_in_clean_churches: 0
+- day_of_week_missing_or_invalid: 0
+- mass_time_missing_or_invalid: 1
+- parish_mass_time_url_missing: 0
+- parish_mass_time_url_invalid: 0
+- mass_time_id_duplicate: 0
+
+Input quality counts:
+- Duplicate church_id groups/rows beyond first: 0/0; duplicate osm_id groups/rows beyond first: 0/0; duplicate mass_time_id groups/rows beyond first: 0/0.
+- Missing required church fields: tgpsg_parish_name=83, tgpsg_parish_url=83.
+- Invalid parish URLs: churches.csv=0; mass_times.csv=0.
+- Missing required schedule fields: church_id=1872, mass_time=1.
+- Non-empty mass_time values with invalid HH:MM format: 0.
+- Clean schedule-to-church referential integrity: 1287/1287 rows link to a church_id in churches_clean.csv.
+- Inputs churches.csv and mass_times.csv were not changed; SHA-256 hashes before/after filtering matched.
+
+Filtering rules: only match_status=matched with complete valid required fields were retained. Source columns and values are preserved. Day values must be an English weekday from the source; mass_time must be a valid 24-hour HH:MM value. URL must be HTTPS on tgpsaigon.net with a non-empty page path.

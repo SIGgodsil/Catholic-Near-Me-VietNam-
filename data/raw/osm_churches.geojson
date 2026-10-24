@@ -1,0 +1,3389 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-10-14T08:45:06Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/39619627",
+        "alt_name": "Nhà thờ Ngã Sáu",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Thánh Jeanne d'Arc",
+        "name:en": "Church of St Joan of Arc",
+        "name:fr": "L’église de la Sainte Jeanne d’Arc",
+        "name:id": "Gereja Katolik Santa Jeanne d’Arc",
+        "name:zh": "圣女贞德教堂",
+        "religion": "christian",
+        "tourism": "attraction",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.667369,
+          10.7570415
+        ]
+      },
+      "id": "way/39619627"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/39619657",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Nhà thờ Chợ Quán",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.681733,
+          10.7573309
+        ]
+      },
+      "id": "way/39619657"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/60118189",
+        "addr:city": "Hồ Chí Minh City",
+        "addr:district": "Xuân Hòa",
+        "addr:housenumber": "289",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Hai Bà Trưng",
+        "alt_name": "Giáo xứ Tân Địn;nhà thờ màu hồng",
+        "alt_name:en": "The Tan Dinh Church of Sacred Heart;Tân Định Parish Church",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "catholic",
+        "name": "Nhà thờ Tân Định",
+        "name:en": "Tân Định Church",
+        "name:es": "Iglesia Tan Dinh o del Sagrado Corazón",
+        "name:zh": "新定天主教堂",
+        "official_name": "Nhà thờ Thánh Tâm Chúa Giêsu, Tân Định",
+        "official_name:en": "Church of the Sacred Heart of Jesus",
+        "religion": "christian",
+        "wikidata": "Q7682043",
+        "wikipedia": "vi:Nhà thờ Tân Định",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6906577,
+          10.7883494
+        ]
+      },
+      "id": "way/60118189"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/60118190",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà thờ Phú Hạnh",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6849489,
+          10.803152
+        ]
+      },
+      "id": "way/60118190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/166344439",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Vĩnh Hội",
+        "name:en": "Vinh Hoi Catholic Church",
+        "name:id": "Gereja Katolik Vinh Hoi",
+        "name:ru": "церковь Винь Хой",
+        "name:zh": "永会天主教堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6984059,
+          10.7622934
+        ]
+      },
+      "id": "way/166344439"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/188114098",
+        "addr:housename": "Nhà thờ Xóm Chiếu",
+        "addr:housenumber": "92B/20",
+        "addr:street": "Tôn Thất Thuyết",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Xóm Chiếu",
+        "name:en": "Xom Chieu Church",
+        "name:id": "Gereja Xom Chieu",
+        "name:ms": "Gereja Xom Chieu",
+        "name:ru": "церковь Сом Тьеу",
+        "name:zh": "坫𥴜天主教堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7103431,
+          10.7548141
+        ]
+      },
+      "id": "way/188114098"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/192214961",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Nhà thờ Khánh Hội",
+        "name:en": "Khanh Hoi Catholic Church",
+        "name:id": "Gereja Katolik Khanh Hoi",
+        "name:ru": "церковь Хань Хой",
+        "name:zh": "庆会天主教堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7066545,
+          10.7592597
+        ]
+      },
+      "id": "way/192214961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/197995353",
+        "addr:district": "Tân Bình",
+        "addr:housenumber": "387",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Lê Văn Sỹ",
+        "addr:subdistrict": "Phường 2",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Nhà Thờ Tân Sa Châu",
+        "religion": "christian",
+        "wheelchair": "no",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6638817,
+          10.7970627
+        ]
+      },
+      "id": "way/197995353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/197995367",
+        "amenity": "place_of_worship",
+        "barrier": "fence",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Vinh Sơn - Ông Tạ",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6610766,
+          10.7932619
+        ]
+      },
+      "id": "way/197995367"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/206503686",
+        "addr:district": "Quận 3",
+        "addr:province": "Hồ Chí Minh",
+        "addr:subdistrict": "Phường 14",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Bùi Phát",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6722136,
+          10.788351
+        ]
+      },
+      "id": "way/206503686"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/207445585",
+        "addr:city": "Ho Chi Minh City",
+        "addr:housenumber": "91",
+        "addr:street": "Hoàng Văn Thụ",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Phú Nhuận",
+        "name:en": "Phu Nhuan Church",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6772743,
+          10.7989807
+        ]
+      },
+      "id": "way/207445585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/256404563",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Tân Thái Sơn",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6196803,
+          10.7931191
+        ]
+      },
+      "id": "way/256404563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/262963858",
+        "addr:city": "Tp. Hồ Chí Minh",
+        "addr:district": "Quận Gò Vấp",
+        "addr:housenumber": "53/7B",
+        "addr:street": "Quang Trung",
+        "addr:subdistrict": "Phường 11",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Hạnh Thông Tây",
+        "name:en": "Hanh Thong Tay Church",
+        "name:vi": "Giáo xứ Hạnh Thông Tây",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6589556,
+          10.8370782
+        ]
+      },
+      "id": "way/262963858"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/262963859",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Hạnh Thông Tây (phụ)",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6587141,
+          10.8372482
+        ]
+      },
+      "id": "way/262963859"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/263506126",
+        "addr:housenumber": "78",
+        "addr:street": "Nguyễn Cửu Vân",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Mông Triệu",
+        "name:en": "Church of the Assumption of the Blessed Virgin Mary",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7058569,
+          10.7968375
+        ]
+      },
+      "id": "way/263506126"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/263507378",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Đức Mẹ Hằng Cứu Giúp - Dòng Chúa Cứu Thế",
+        "name:en": "Congregation of the Most Holy Redeemer - Province of Vietnam",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6809509,
+          10.7814448
+        ]
+      },
+      "id": "way/263507378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/277754754",
+        "addr:district": "Quận Tân Bình",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Trường Sa",
+        "addr:subdistrict": "Phường 1",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Tân Chí Linh",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6636832,
+          10.7921556
+        ]
+      },
+      "id": "way/277754754"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/288734395",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Gò Vấp",
+        "addr:province": "Ho Chi Minh City",
+        "addr:street": "Đường Lê Hoàng Phái",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "catholic",
+        "name": "Nhà thờ An Nhơn",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6747247,
+          10.8421602
+        ]
+      },
+      "id": "way/288734395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/292074917",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà thờ Gia Định",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7000675,
+          10.7999909
+        ]
+      },
+      "id": "way/292074917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/314226096",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Tân Đức Phước Bình",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.774152,
+          10.8152485
+        ]
+      },
+      "id": "way/314226096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/327447635",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Hà Nội",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6647138,
+          10.8510423
+        ]
+      },
+      "id": "way/327447635"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/327447637",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Hợp An",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6643354,
+          10.8546272
+        ]
+      },
+      "id": "way/327447637"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/327447640",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Lam Sơn",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6586459,
+          10.8541573
+        ]
+      },
+      "id": "way/327447640"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/327447642",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Thái Bình",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6648066,
+          10.852796
+        ]
+      },
+      "id": "way/327447642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/327447645",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Tử Đình",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6657919,
+          10.8547845
+        ]
+      },
+      "id": "way/327447645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/327447647",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Lạng Sơn",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6607519,
+          10.8517191
+        ]
+      },
+      "id": "way/327447647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/327969756",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "check_date": "2025-05-31",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Mạc Ty Nho",
+        "name:en": "Church of St.Martin of Tours",
+        "name:fr": "Église du Saint Martin de Tours",
+        "name:id": "Gereja Santo Martinus dari Tours",
+        "name:ms": "Gereja Santo Martinus dari Tours",
+        "name:ru": "цверкоь святого Мартина Турского",
+        "name:zh": "都尔的圣玛尔定教堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7010302,
+          10.7863156
+        ]
+      },
+      "id": "way/327969756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/330305509",
+        "addr:city": "Phường 12",
+        "addr:district": "Quận 10",
+        "addr:housenumber": "54",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Đường Thành Thái",
+        "addr:subdistrict": "Phường 12",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Đồng Tiến",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6661831,
+          10.7712153
+        ]
+      },
+      "id": "way/330305509"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/366105826",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Giáo xứ Thủ Thiêm",
+        "name:en": "Thu Thiem Catholic Church",
+        "name:id": "Gereja Katolik Thu Thiem",
+        "name:zh": "守佥天主教堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7104426,
+          10.7729855
+        ]
+      },
+      "id": "way/366105826"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371278740",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Phú Nhuận",
+        "addr:housenumber": "190",
+        "addr:street": "Lê Văn Sỹ",
+        "addr:subdistrict": "Phường 10",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Đa Minh - Ba Chuông",
+        "name:en": "Church of Three Bells - Dominican Order",
+        "religion": "christian",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6694642,
+          10.7938483
+        ]
+      },
+      "id": "way/371278740"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/373719793",
+        "addr:district": "Phú Nhuận",
+        "addr:housenumber": "525/92",
+        "addr:street": "hẻm 525 Huỳnh Văn Bánh",
+        "addr:subdistrict": "14",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Tân Hòa",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6682762,
+          10.7899619
+        ]
+      },
+      "id": "way/373719793"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/373721568",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Tân Dân",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6564595,
+          10.7944716
+        ]
+      },
+      "id": "way/373721568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/377308559",
+        "addr:housenumber": "39",
+        "addr:street": "Lương Trúc Đàm",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Giáo xứ Phú Thọ Hòa",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6303837,
+          10.7741491
+        ]
+      },
+      "id": "way/377308559"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/377422765",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "catholic",
+        "name": "Nhà thờ Thuận Phát",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7157006,
+          10.7517552
+        ]
+      },
+      "id": "way/377422765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/420032386",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Chánh Hưng",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6717668,
+          10.7408035
+        ]
+      },
+      "id": "way/420032386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/420032397",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Tu Viện Dòng Mến Thánh Giá Thủ Thiêm",
+        "name:en": "Thu Thiem Congregation of the Holy Cross Lovers",
+        "name:id": "Biara Thu Thiem - Kongregasi Pencinta Salib Suci",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7114584,
+          10.7718337
+        ]
+      },
+      "id": "way/420032397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/420032416",
+        "addr:street": "Phạm Hùng",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Nam Hải",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6717536,
+          10.7373189
+        ]
+      },
+      "id": "way/420032416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/420287580",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Bình Phước",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6388563,
+          10.7408537
+        ]
+      },
+      "id": "way/420287580"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/420287581",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Hưng Phú",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6720576,
+          10.7456778
+        ]
+      },
+      "id": "way/420287581"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/421603557",
+        "addr:housenumber": "90",
+        "addr:street": "Nguyễn Hậu",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Tân Phú",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6348022,
+          10.7913683
+        ]
+      },
+      "id": "way/421603557"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/421970916",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Dòng tu Khiết Tâm",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6442521,
+          10.7727987
+        ]
+      },
+      "id": "way/421970916"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/421970917",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Vĩnh Hoà",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6459554,
+          10.7687223
+        ]
+      },
+      "id": "way/421970917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/421970959",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ giáo xứ Phú Bình",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6438439,
+          10.7736007
+        ]
+      },
+      "id": "way/421970959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/457601646",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Tân Bình",
+        "addr:housenumber": "245",
+        "addr:street": "Nguyễn Thị Nhỏ",
+        "addr:subdistrict": "9",
+        "amenity": "place_of_worship",
+        "name": "Giáo xứ Tân Phước",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6527369,
+          10.7741486
+        ]
+      },
+      "id": "way/457601646"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/489019405",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Bình Đông",
+        "name:en": "Binh Dong Parish Church",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.63048,
+          10.7231436
+        ]
+      },
+      "id": "way/489019405"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/493157639",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo Xứ Bến Cát",
+        "name:en": "Ben Cat Catholic Parish Church",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6904323,
+          10.8280704
+        ]
+      },
+      "id": "way/493157639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/493157644",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo Xứ Bến Hải",
+        "name:en": "Ben Hai Catholic Parish Church",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6951284,
+          10.826083
+        ]
+      },
+      "id": "way/493157644"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/493174212",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Mân Côi Gò Vấp",
+        "name:en": "Man Coi Go Vap Catholic Parish",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6813158,
+          10.8161364
+        ]
+      },
+      "id": "way/493174212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/493251146",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Nữ tu viện Dòng thánh Phaolô thành Chartres",
+        "name:en": "Sisters of St Paul of Chartres",
+        "name:fr": "Les Sœurs de Saint Paul de Chartres",
+        "name:id": "Kongregasi Suster-suster Santo Paulus Chartres",
+        "name:ru": "Монастырь Святого Павла Шартрского",
+        "name:zh": "沙特尔圣保罗修道院",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7063696,
+          10.7841419
+        ]
+      },
+      "id": "way/493251146"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/495697563",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Vinh Sơn",
+        "name:en": "Vinh Son Church",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6576508,
+          10.7851613
+        ]
+      },
+      "id": "way/495697563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/495697571",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Nghĩa Hòa",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6590399,
+          10.7866294
+        ]
+      },
+      "id": "way/495697571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/495697577",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Sao Mai",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6581965,
+          10.7870449
+        ]
+      },
+      "id": "way/495697577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/495697589",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Tu viện Mân Côi",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6574063,
+          10.7888286
+        ]
+      },
+      "id": "way/495697589"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/495697600",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Chí Hòa",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6552439,
+          10.7884795
+        ]
+      },
+      "id": "way/495697600"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/495698482",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Nhà Thờ Thánh Mẫu",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6576898,
+          10.7879476
+        ]
+      },
+      "id": "way/495698482"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/495698484",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Tu viện Mân Côi",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6574063,
+          10.7888286
+        ]
+      },
+      "id": "way/495698484"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/495698491",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Chí Hòa",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6554828,
+          10.7883577
+        ]
+      },
+      "id": "way/495698491"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/496059273",
+        "addr:district": "Tân Bình",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Hẻm 686 Cách mạng tháng 8",
+        "addr:subdistrict": "Phường 5",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Giáo Xứ An Lạc",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6642393,
+          10.7889004
+        ]
+      },
+      "id": "way/496059273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/498264577",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Tân Bình",
+        "addr:housenumber": "168",
+        "addr:street": "Đường Cách Mạng Tháng Tám",
+        "addr:subdistrict": "Phường 5",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Nam Thái",
+        "name:en": "Nam Thai Church",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6611752,
+          10.7891561
+        ]
+      },
+      "id": "way/498264577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/499047936",
+        "addr:district": "Tân Bình",
+        "addr:housenumber": "219/20",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Hẻm 219 Đất Thánh",
+        "addr:subdistrict": "Phường 6",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà thờ Nam Hòa",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6599578,
+          10.7835007
+        ]
+      },
+      "id": "way/499047936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/502532627",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "11",
+        "addr:street": "Tôn Thất Hiệp",
+        "addr:subdistrict": "13",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà Thờ Thăng Long",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6533199,
+          10.7649513
+        ]
+      },
+      "id": "way/502532627"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/504399217",
+        "addr:housenumber": "78",
+        "addr:street": "Quốc lộ 13 cũ",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Tu viện Thánh Giuse",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7220799,
+          10.8614428
+        ]
+      },
+      "id": "way/504399217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/508351453",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "landuse": "religious",
+        "name": "Giáo xứ Tân Hương",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6248136,
+          10.7902306
+        ]
+      },
+      "id": "way/508351453"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/509355568",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "8",
+        "addr:housenumber": "2287",
+        "addr:street": "Phạm Thế Hiển",
+        "addr:subdistrict": "6",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Giáo xứ Bình An Hạ",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6425931,
+          10.7321769
+        ]
+      },
+      "id": "way/509355568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/518855280",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Nhà thờ Hòa Hưng",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6700566,
+          10.7816876
+        ]
+      },
+      "id": "way/518855280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/547931031",
+        "addr:district": "Tân Bình",
+        "addr:housenumber": "58/6",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Chấn Hưng",
+        "addr:subdistrict": "Phường 6",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà Thờ Lộc Hưng",
+        "religion": "christian",
+        "start_date": "1955",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6608732,
+          10.7852111
+        ]
+      },
+      "id": "way/547931031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/548114715",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà thờ Xây dựng",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.661055,
+          10.7881561
+        ]
+      },
+      "id": "way/548114715"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/554308031",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "religion": "christian",
+        "roof:colour": "orange",
+        "roof:shape": "gabled",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6636968,
+          10.7921659
+        ]
+      },
+      "id": "way/554308031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/585932843",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà Thờ Vinh Sơn Phaolô",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6726393,
+          10.7702872
+        ]
+      },
+      "id": "way/585932843"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/589933269",
+        "addr:city": "Phường Hiệp Bình Chánh",
+        "addr:district": "Thành phố Thủ Đức",
+        "addr:housenumber": "58",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Đường Số 5",
+        "addr:subdistrict": "Phường Hiệp Bình Chánh",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Fatima Bình Triệu",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7103137,
+          10.8288796
+        ]
+      },
+      "id": "way/589933269"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/606957397",
+        "addr:district": "Bình Thạnh",
+        "addr:housenumber": "22B",
+        "addr:street": "Xô Viết Nghệ Tĩnh",
+        "addr:subdistrict": "19",
+        "amenity": "place_of_worship",
+        "building": "no",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Giáo xứ Thị Nghè",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7084186,
+          10.7932402
+        ]
+      },
+      "id": "way/606957397"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/609063637",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Tân Phú Hòa",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6404122,
+          10.7724863
+        ]
+      },
+      "id": "way/609063637"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/612178010",
+        "addr:street": "Đường Trần Ðình Xu",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "name": "Nhà thờ Cầu Kho",
+        "opening_hours": "Mo-Su 09:00-18:00",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6912035,
+          10.7596923
+        ]
+      },
+      "id": "way/612178010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/682250552",
+        "addr:housenumber": "90Bis",
+        "addr:street": "Tôn Thất Thuyết",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Thánh Giuse Thợ",
+        "name:en": "St Joseph the Worker Church",
+        "name:id": "Gereja Santo Yusuf Pekerja",
+        "name:zh": "圣约瑟夫工人教堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7049248,
+          10.7533763
+        ]
+      },
+      "id": "way/682250552"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/682412611",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Thánh Giuse",
+        "name:en": "Saint Joseph Catholic Church",
+        "name:zh": "圣若瑟天主教堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7042953,
+          10.7535022
+        ]
+      },
+      "id": "way/682412611"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/683917144",
+        "addr:housenumber": "166",
+        "addr:street": "105A Đoàn Văn Bơ",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Thánh Tâm",
+        "name:en": "Thanh Tam Church",
+        "name:id": "Gereja Thanh Tam",
+        "name:zh": "圣心教堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7092229,
+          10.7582033
+        ]
+      },
+      "id": "way/683917144"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/684291658",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Thánh An Tôn",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7149509,
+          10.7582526
+        ]
+      },
+      "id": "way/684291658"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/724384514",
+        "addr:street": "Đường Phạm Thế Hiển",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "name": "Phanxicô Xaviê",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6341163,
+          10.7199641
+        ]
+      },
+      "id": "way/724384514"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/801950766",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Quận 1",
+        "addr:housenumber": "1",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Công trường Công xã Paris",
+        "addr:subdistrict": "Bến Nghé",
+        "amenity": "place_of_worship",
+        "basilica": "minor",
+        "building": "church",
+        "denomination": "catholic",
+        "heritage": "yes",
+        "historic": "heritage",
+        "name": "Nhà thờ Đức Bà Sài Gòn",
+        "name:ar": "كاتدرائية نوتردام",
+        "name:cjm": "bh m~K =b_g+R",
+        "name:cjm-Latn": "Baha Muk Baigaor",
+        "name:de": "Kathedrale Notre Dame von Saigon",
+        "name:en": "Saigon Notre Dame Cathedral",
+        "name:es": "Basílica de Notre-Dame de Saigón",
+        "name:fr": "Cathédrale de l'Immaculée-Conception",
+        "name:id": "Basilika Notre-Dame Saigon",
+        "name:ja": "サイゴン大聖堂",
+        "name:km": "ព្រះវិហារស្ត្រី",
+        "name:ko": "노틀담성당",
+        "name:ms": "Katedral Notre Dame",
+        "name:ru": "Собор Сайгонской Богоматери",
+        "name:tl": "Katedral ng Notre Dame",
+        "name:uk": "Собор сайгонським Богоматері",
+        "name:vi": "Nhà thờ Đức Bà Sài Gòn",
+        "name:zh": "圣母教堂",
+        "name:zh-Hant": "聖母教堂",
+        "official_name": "Vương cung thánh đường Chính tòa Đức Mẹ Vô nhiễm Nguyên tội",
+        "official_name:en": "Cathedral Basilica of Our Lady of The Immaculate Conception",
+        "official_name:ru": "Базилика Непорочного Зачатия Пресвятой Девы Марии",
+        "official_name:vi-Hani": "王宮聖堂正座德媄無染原罪",
+        "official_name:zh": "圣母无原罪圣殿主教座堂",
+        "religion": "christian",
+        "tourism": "attraction",
+        "wikidata": "Q428129",
+        "wikimedia_commons": "Category:Notre-Dame Cathedral Basilica of Saigon",
+        "wikipedia": "vi:Nhà thờ chính tòa Đức Bà Sài Gòn",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6990579,
+          10.779771
+        ]
+      },
+      "id": "way/801950766"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/802157419",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Thánh đường Đức Mẹ Hoà Bình",
+        "name:en": "Lady of Peace Church",
+        "name:fr": "Église Notre-Dame de la Paix",
+        "name:id": "Gereja Bunda Perdamaian",
+        "name:ru": "церковь Богоматери Мира",
+        "name:zh": "和平之后天主堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7002588,
+          10.770093
+        ]
+      },
+      "id": "way/802157419"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/804926030",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "landuse": "religious",
+        "name": "Đan viện Cát Minh Sài Gòn",
+        "name:en": "Carmelite Monastery of Saigon",
+        "name:es": "Monasterio Carmelita de Saigón",
+        "name:fr": "Monastère des Carmélites de Saigon",
+        "name:id": "Biara Karmel Saigon",
+        "name:it": "Monastero carmelitano di Saigon",
+        "name:ru": "Кармелитский монастырь Сайгона",
+        "name:zh": "西贡加尔默罗隐修院",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7042459,
+          10.7830645
+        ]
+      },
+      "id": "way/804926030"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/804926041",
+        "amenity": "place_of_worship",
+        "building": "chapel",
+        "denomination": "roman_catholic",
+        "name": "Nhà nguyện Thánh Giuse",
+        "name:ar": "كنيسة القديس يوسف",
+        "name:en": "St Joseph's Chapel",
+        "name:es": "Capilla de San José",
+        "name:fr": "chapelle de Saint Joseph",
+        "name:id": "Kapel Santo Yusuf",
+        "name:ms": "Kapel Saint Joseph",
+        "name:ru": "часовня Святого Иосифа",
+        "name:zh": "圣约瑟夫源堂",
+        "name:zh-Hant": "聖約瑟夫源堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7039757,
+          10.7827854
+        ]
+      },
+      "id": "way/804926041"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/806860809",
+        "addr:housenumber": "18",
+        "addr:street": "Phan Văn Trường",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "roman_catholic",
+        "name": "Nhà Thờ Thánh An Tôn",
+        "name:en": "St Anthony’s Catholic Church",
+        "name:id": "Gereja Santo Anthonius",
+        "name:ms": "Gereja Saint Anthony",
+        "name:ru": "церковь Святого Антония",
+        "name:zh": "圣安东尼天主教堂",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6968711,
+          10.7662923
+        ]
+      },
+      "id": "way/806860809"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/829864820",
+        "addr:city": "TPHCM",
+        "addr:district": "Tân Bình",
+        "addr:housenumber": "28",
+        "addr:street": "Long Hưng",
+        "addr:subdistrict": "Phường 7",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "building:levels": "0",
+        "denomination": "roman_catholic",
+        "name": "Nhà Thờ Khiết Tâm",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6556972,
+          10.7853342
+        ]
+      },
+      "id": "way/829864820"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/834920039",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà Thờ Tân Hưng",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6672038,
+          10.849244
+        ]
+      },
+      "id": "way/834920039"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/834920040",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà Thờ Hoàng Mai",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6678272,
+          10.8490062
+        ]
+      },
+      "id": "way/834920040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/834920043",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà Thờ Bắc Dũng",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6660515,
+          10.8522084
+        ]
+      },
+      "id": "way/834920043"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/834920044",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà Thờ Trung Bắc",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6663435,
+          10.8495627
+        ]
+      },
+      "id": "way/834920044"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/834920045",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà Thờ Hà Đông",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6649244,
+          10.8485918
+        ]
+      },
+      "id": "way/834920045"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/838400065",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "layer": "1",
+        "name": "Nhà Thờ Thuận Phát",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7150439,
+          10.7512785
+        ]
+      },
+      "id": "way/838400065"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/875447287",
+        "addr:housenumber": "600",
+        "addr:street": "Xa Lộ Hà Nội",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà thờ Thiên Thần",
+        "name:en": "St. Michael the Archangel Church",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7536637,
+          10.807287
+        ]
+      },
+      "id": "way/875447287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/906434459",
+        "addr:city": "Phường 13",
+        "addr:district": "Quận Bình Thạnh",
+        "addr:housenumber": "430",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Bình Lợi",
+        "addr:subdistrict": "Phường 13",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Bình Lợi",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.706603,
+          10.82689
+        ]
+      },
+      "id": "way/906434459"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/907280822",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Quận 1",
+        "addr:housenumber": "1",
+        "addr:province": "Thành phố Hồ Chí Minh",
+        "addr:street": "Tôn Thất Tùng",
+        "addr:subdistrict": "Phường Bến Thành",
+        "alt_name": "Giáo xứ Chợ Đũi - Nhà thờ Huyện Sỹ",
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic",
+        "description:en": "Catholic parish church dedicated to St. Philip the Apostle, built by Huyện Sỹ.",
+        "name": "Nhà thờ Huyện Sỹ",
+        "name:en": "Huyện Sỹ Church (St. Philip the Apostle)",
+        "official_name": "Nhà thờ Thánh Philipphê Tông đồ",
+        "religion": "christian",
+        "wikidata": "Q10800886",
+        "wikipedia": "vi:Nhà thờ Huyện Sỹ",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.688957,
+          10.768614
+        ]
+      },
+      "id": "way/907280822"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/907285040",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà Thờ Thánh Martino",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7097094,
+          10.7960883
+        ]
+      },
+      "id": "way/907285040"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1041090695",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà Thờ Thánh Giuse",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6860112,
+          10.8255453
+        ]
+      },
+      "id": "way/1041090695"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1042849147",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "check_date": "2025-11-19",
+        "name": "Nhà Thờ Phanxicô Đa Kao",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7003064,
+          10.7895713
+        ]
+      },
+      "id": "way/1042849147"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1043435432",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "check_date": "2026-02-22",
+        "name": "Nhà Thờ Tống Viết Bường",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6629836,
+          10.7827939
+        ]
+      },
+      "id": "way/1043435432"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1088370266",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà thờ Vườn Xoài",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6751134,
+          10.7890603
+        ]
+      },
+      "id": "way/1088370266"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1154085685",
+        "addr:city": "Thành phố Hồ Chí Minh",
+        "addr:district": "Quận 3",
+        "addr:housenumber": "228",
+        "addr:street": "Nam Kỳ Khởi Nghĩa",
+        "amenity": "place_of_worship",
+        "check_date": "2025-04-06",
+        "name": "Dòng Đức Bà - Giáo Xứ Regina Mundi",
+        "name:en": "Congregation Notre Dame - Regina Mundi Parish",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6906046,
+          10.7842726
+        ]
+      },
+      "id": "way/1154085685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1208694835",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Nguyễn Duy Khang",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7099331,
+          10.7991886
+        ]
+      },
+      "id": "way/1208694835"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1212006792",
+        "addr:city": "Phường 2",
+        "addr:district": "Quận 5",
+        "addr:housenumber": "118",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Trần Bình Trọng",
+        "addr:subdistrict": "Phường 2",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Tu viện Mến Thánh Giá Chợ Quán",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6816288,
+          10.7562783
+        ]
+      },
+      "id": "way/1212006792"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1215418794",
+        "addr:city": "Phường 5",
+        "addr:district": "Quận 5",
+        "addr:housenumber": "4",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "An Bình",
+        "addr:subdistrict": "Phường 5",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà thờ An Bình",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6736321,
+          10.7497142
+        ]
+      },
+      "id": "way/1215418794"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1216845863",
+        "addr:city": "Phường 14",
+        "addr:district": "Tân Bình",
+        "addr:housenumber": "54/19",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Hẻm 54",
+        "addr:subdistrict": "Phường 14",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Tân Thành",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6426681,
+          10.7962064
+        ]
+      },
+      "id": "way/1216845863"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1225233356",
+        "addr:city": "Phường 11",
+        "addr:district": "Quận 3",
+        "addr:housenumber": "205/45",
+        "addr:province": "Hồ Chí Minh",
+        "addr:street": "Hẻm 205 Trần Văn Ðang",
+        "addr:subdistrict": "Phường 11",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ An Phú",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6726323,
+          10.7860618
+        ]
+      },
+      "id": "way/1225233356"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1232490706",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Giáo xứ Thánh Martinô",
+        "name:en": "St. Martin Catholic Church",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.628942,
+          10.7931046
+        ]
+      },
+      "id": "way/1232490706"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1235472350",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Đắc Lộ",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6490516,
+          10.7948579
+        ]
+      },
+      "id": "way/1235472350"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1235472357",
+        "amenity": "place_of_worship",
+        "name": "Tu viện nhà thờ Mân Côi",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6508176,
+          10.7932552
+        ]
+      },
+      "id": "way/1235472357"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236634389",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Thánh đường Giáo xứ Phú Trung",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.650387,
+          10.7881315
+        ]
+      },
+      "id": "way/1236634389"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1473644568",
+        "amenity": "place_of_worship",
+        "barrier": "fence",
+        "denomination": "catholic",
+        "name": "Nhà nguyện Thánh Tâm",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7227675,
+          10.7612351
+        ]
+      },
+      "id": "way/1473644568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1474294608",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà Thờ Khánh Hội",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7066377,
+          10.7592607
+        ]
+      },
+      "id": "way/1474294608"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1482251693",
+        "addr:housenumber": "25",
+        "addr:street": "Đường Học Lạc",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Nhà thờ Giáo xứ Thánh Phanxicô Xaviê",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6539469,
+          10.752034
+        ]
+      },
+      "id": "way/1482251693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1540936764",
+        "addr:housenumber": "245",
+        "addr:street": "Nguyễn Thị Nhỏ",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "name": "Nhà Thờ Giáo Xứ Tân Phước",
+        "religion": "christian",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6526973,
+          10.7742364
+        ]
+      },
+      "id": "way/1540936764"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2593665195",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Nhà Thờ Vĩnh Hiệp",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6435409,
+          10.8413788
+        ]
+      },
+      "id": "node/2593665195"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3098846282",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Hòa Bình",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6777557,
+          10.8214453
+        ]
+      },
+      "id": "node/3098846282"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3375861775",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Nhà Thờ Tân Lập",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7788224,
+          10.7867664
+        ]
+      },
+      "id": "node/3375861775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3377491738",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Nhà Thờ Mỹ Hòa",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7775575,
+          10.7848332
+        ]
+      },
+      "id": "node/3377491738"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3614214188",
+        "amenity": "place_of_worship",
+        "name": "Giáo xứ Bác Ái",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6839347,
+          10.8103264
+        ]
+      },
+      "id": "node/3614214188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4423122039",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Gò Vấp",
+        "addr:province": "Ho Chi Minh City",
+        "addr:street": "Lê Đức Thọ",
+        "addr:subdistrict": "15",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Nhà Thờ Đức Mẹ Hằng Cứu Giúp",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6717399,
+          10.8495083
+        ]
+      },
+      "id": "node/4423122039"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4423122041",
+        "addr:city": "Ho Chi Minh City",
+        "addr:district": "Gò Vấp",
+        "addr:province": "Ho Chi Minh City",
+        "addr:street": "Phạm Văn Chiêu",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Nhà Thờ Thạch Đà",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6539513,
+          10.8505267
+        ]
+      },
+      "id": "node/4423122041"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4615672718",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Đức Bà Fatima",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6861908,
+          10.7648008
+        ]
+      },
+      "id": "node/4615672718"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4674922391",
+        "addr:housenumber": "458",
+        "addr:street": "Nguyễn Kiệm",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Phát Diệm",
+        "name:vi": "Nhà Thờ Phát Diệm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6784599,
+          10.8028478
+        ]
+      },
+      "id": "node/4674922391"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4865404721",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Giáo xứ Công Lý",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6834675,
+          10.7919831
+        ]
+      },
+      "id": "node/4865404721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5293847367",
+        "amenity": "place_of_worship",
+        "denomination": "roman_catholic",
+        "name": "Đền Thánh Micae",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6569073,
+          10.7846165
+        ]
+      },
+      "id": "node/5293847367"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5419192721",
+        "addr:street": "Đường số 5",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Fatima Bình Triệu",
+        "name:en": "Fatima Bình Triệu church",
+        "opening_hours": "24/7",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7103839,
+          10.8291393
+        ]
+      },
+      "id": "node/5419192721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5777165478",
+        "amenity": "place_of_worship",
+        "denomination": "catholic",
+        "name": "Nhà Thờ An Phú",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6969562,
+          10.7393645
+        ]
+      },
+      "id": "node/5777165478"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6770305218",
+        "addr:housenumber": "321",
+        "addr:street": "Đường Quang Trung",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Xóm Thuốc",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6712771,
+          10.8293446
+        ]
+      },
+      "id": "node/6770305218"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6924180585",
+        "addr:housenumber": "44",
+        "addr:street": "Tú Xương",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Mai Khôi",
+        "religion": "christian",
+        "website": "https://giothanhle.net/gio-le/nha-tho-mai-khoi-quan-3/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6836447,
+          10.7777234
+        ]
+      },
+      "id": "node/6924180585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7559549347",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ The Well International",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7039013,
+          10.7642444
+        ]
+      },
+      "id": "node/7559549347"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9584599328",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Hưng Phú",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6720644,
+          10.7456874
+        ]
+      },
+      "id": "node/9584599328"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9584673029",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Bình Hòa",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6943904,
+          10.8100311
+        ]
+      },
+      "id": "node/9584673029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9584833458",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Giáo Xứ Vườn Chuối",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6848223,
+          10.7752582
+        ]
+      },
+      "id": "node/9584833458"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9584841102",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Phú Hòa",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6453746,
+          10.7769127
+        ]
+      },
+      "id": "node/9584841102"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9584888586",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Thánh Gia",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6882433,
+          10.7937568
+        ]
+      },
+      "id": "node/9584888586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9584888587",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Xóm Lách",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6833409,
+          10.789051
+        ]
+      },
+      "id": "node/9584888587"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9584888591",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Mân Côi",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6809643,
+          10.8167268
+        ]
+      },
+      "id": "node/9584888591"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9585048352",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Thái Hòa",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6592041,
+          10.7909458
+        ]
+      },
+      "id": "node/9585048352"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9585048353",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ An Tôn",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6584245,
+          10.7895356
+        ]
+      },
+      "id": "node/9585048353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9585091201",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ An Phú",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6727505,
+          10.7861367
+        ]
+      },
+      "id": "node/9585091201"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9585108828",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Phú Hải",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.683623,
+          10.7964653
+        ]
+      },
+      "id": "node/9585108828"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9585108829",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Phú Lộc",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6788969,
+          10.7946388
+        ]
+      },
+      "id": "node/9585108829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9585160205",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Bình Lợi",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7065842,
+          10.8266615
+        ]
+      },
+      "id": "node/9585160205"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9585835378",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Môi Khôi",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7279554,
+          10.7544764
+        ]
+      },
+      "id": "node/9585835378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9585835382",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Tắc Rỗi",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7152242,
+          10.7369528
+        ]
+      },
+      "id": "node/9585835382"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9586838814",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Phú Hiền",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6929665,
+          10.7982098
+        ]
+      },
+      "id": "node/9586838814"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9586838815",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Thánh Mẫu",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6906889,
+          10.7983658
+        ]
+      },
+      "id": "node/9586838815"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9586883314",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Tử Đình",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6656908,
+          10.8547691
+        ]
+      },
+      "id": "node/9586883314"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587042692",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Chính Lộ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.701594,
+          10.7970526
+        ]
+      },
+      "id": "node/9587042692"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587042695",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Đức Tin",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6687779,
+          10.8334601
+        ]
+      },
+      "id": "node/9587042695"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587171478",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Bình Minh",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6453012,
+          10.7388217
+        ]
+      },
+      "id": "node/9587171478"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587171479",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Bình Thái",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6508691,
+          10.7372387
+        ]
+      },
+      "id": "node/9587171479"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587246058",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Vĩnh Hòa",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6461346,
+          10.7687804
+        ]
+      },
+      "id": "node/9587246058"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587252983",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Tân Đức",
+        "religion": "buddhist"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.77455,
+          10.8153538
+        ]
+      },
+      "id": "node/9587252983"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587300724",
+        "addr:housenumber": "45",
+        "addr:street": "Hồ Đắc Di",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Nhân Hòa",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6324806,
+          10.8057333
+        ]
+      },
+      "id": "node/9587300724"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587309957",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Văn Côi",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6489992,
+          10.7943372
+        ]
+      },
+      "id": "node/9587309957"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587309958",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Đắc Lộ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6492108,
+          10.7950653
+        ]
+      },
+      "id": "node/9587309958"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587309959",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Tân Châu",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6515099,
+          10.7945813
+        ]
+      },
+      "id": "node/9587309959"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587309960",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Tân Việt",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6460957,
+          10.7963778
+        ]
+      },
+      "id": "node/9587309960"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587536843",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Thánh Giuse Thợ",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.7649269,
+          10.8289264
+        ]
+      },
+      "id": "node/9587536843"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587618721",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Thiên Ân",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6236448,
+          10.7806818
+        ]
+      },
+      "id": "node/9587618721"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9593196287",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Lam Sơn",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6586342,
+          10.8539958
+        ]
+      },
+      "id": "node/9593196287"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9593240655",
+        "amenity": "place_of_worship",
+        "name": "Nhà thờ Lạng Sơn",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6607961,
+          10.8518637
+        ]
+      },
+      "id": "node/9593240655"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9593240656",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Thái Bình",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6649747,
+          10.852738
+        ]
+      },
+      "id": "node/9593240656"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9593240657",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Hà Nội",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6648291,
+          10.8510333
+        ]
+      },
+      "id": "node/9593240657"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9593240658",
+        "amenity": "place_of_worship",
+        "name": "Nhà Thờ Hợp An",
+        "religion": "christian"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.6643992,
+          10.854596
+        ]
+      },
+      "id": "node/9593240658"
+    }
+  ]
+}

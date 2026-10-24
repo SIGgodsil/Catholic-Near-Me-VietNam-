@@ -1,0 +1,11 @@
+CatholicNearMe initial data merge report
+
+Source/data rows: osm_churches.csv=163; churches.csv=163. tgpsaigon_parishes.csv=207 (supporting source only). tgpsaigon_mass_times.csv=3160; mass_times.csv=3160. match_decisions.csv=3530 decisions.
+OSM records preserved: 163/163; unique church_id/osm_id: 163.
+Church status: matched=80, unmatched=57, uncertain=26.
+Mass row status: matched=1288, unmatched=31, uncertain=1841.
+
+Validation: duplicate mass parish_url headers were read by position: row[1] -> parish_mass_time_url; row[4] -> source_list_url. Required columns, row widths, stable IDs, URL schemes, source row counts, exact OSM display names/coordinates, and exact source mass day/time/URLs checked.
+Skipped or read-error rows: 0. SHA-256 checks confirm all source files unchanged. Confidence is an evidence support level, not a statistical probability.
+
+Unresolved: OSM to TGPSG links were accepted only for unique two-way normalized name matches. Name collisions and near-name cases remain uncertain/unmatched because structured TGPSG coordinates are unavailable. Mass records are linked only through a unique parish URL or name and a parish already uniquely linked to OSM. Duplicate OSM names remain separate records.

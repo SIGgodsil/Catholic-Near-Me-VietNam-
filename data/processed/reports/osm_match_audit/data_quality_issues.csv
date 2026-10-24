@@ -1,0 +1,89 @@
+﻿file_name,line_number_or_scope,column_or_index,severity,description,recommended_action
+tgpsaigon_mass_times.csv,1,"2,5",high,"Header trùng tên 'parish_url' ở các cột 1-based 2, 5; đọc bằng vị trí cột.",Xác nhận ý nghĩa từng vị trí và đổi tên cột trong giai đoạn xử lý riêng.
+tgpsaigon_mass_times.csv,1,"parish_url columns 2,5",high,"Không xác định được cột nào là URL nguồn lịch lễ chỉ từ header trùng và giá trị; hai vị trí được giữ nguyên, không chọn đoán.",Xác nhận ý nghĩa theo nguồn tạo dữ liệu; sau đó đổi cột URL nguồn thành parish_mass_time_url ở bước riêng.
+osm_churches.csv,multiple,parish_name,low,5 nhóm tên trùng (5 dòng dư so với tên duy nhất).,Kiểm tra khả năng tên hợp lệ dùng chung; không tự gộp.
+tgpsaigon_parishes.csv,multiple,parish_name,low,15 nhóm tên trùng (16 dòng dư so với tên duy nhất).,Kiểm tra khả năng tên hợp lệ dùng chung; không tự gộp.
+tgpsaigon_mass_times.csv,multiple,parish_name,low,190 nhóm tên trùng (2969 dòng dư so với tên duy nhất).,Kiểm tra khả năng tên hợp lệ dùng chung; không tự gộp.
+tgpsaigon_parishes.csv,12,parish_name,medium,Tên TGPSG 'Hưng Phú' có ứng viên OSM chưa chốt: Nhà thờ Hưng Phú [way/420287581] | Nhà thờ Hưng Phú [node/9584599328].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,12,parish_name,medium,Tên TGPSG 'Hưng Phú' có ứng viên OSM chưa chốt: Nhà thờ Hưng Phú [way/420287581] | Nhà thờ Hưng Phú [node/9584599328].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,13,parish_name,medium,Tên TGPSG 'Mông Triệu' có ứng viên OSM chưa chốt: Nhà thờ Mông Triệu [way/263506126].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,18,parish_name,medium,Tên TGPSG 'Khiết Tâm' có ứng viên OSM chưa chốt: Nhà Thờ Khiết Tâm [way/829864820].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,39,parish_name,medium,Tên TGPSG 'Mông Triệu' có ứng viên OSM chưa chốt: Nhà thờ Mông Triệu [way/263506126].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,54,parish_name,medium,Tên TGPSG 'Thánh Giuse' có ứng viên OSM chưa chốt: Nhà thờ Thánh Giuse [way/682412611] | Nhà Thờ Thánh Giuse [way/1041090695].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,54,parish_name,medium,Tên TGPSG 'Thánh Giuse' có ứng viên OSM chưa chốt: Nhà thờ Thánh Giuse [way/682412611] | Nhà Thờ Thánh Giuse [way/1041090695].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,67,parish_name,medium,Tên TGPSG 'Mỹ Hòa' có ứng viên OSM chưa chốt: Nhà Thờ Mỹ Hòa [node/3377491738].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,71,parish_name,medium,Tên TGPSG 'Tân Hưng' có ứng viên OSM chưa chốt: Nhà Thờ Tân Hưng [way/834920039].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,85,parish_name,medium,Tên TGPSG 'Thánh Mẫu' có ứng viên OSM chưa chốt: Nhà Thờ Thánh Mẫu [way/495698482] | Nhà thờ Thánh Mẫu [node/9586838815].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,85,parish_name,medium,Tên TGPSG 'Thánh Mẫu' có ứng viên OSM chưa chốt: Nhà Thờ Thánh Mẫu [way/495698482] | Nhà thờ Thánh Mẫu [node/9586838815].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,96,parish_name,medium,Tên TGPSG 'Thánh Giuse' có ứng viên OSM chưa chốt: Nhà thờ Thánh Giuse [way/682412611] | Nhà Thờ Thánh Giuse [way/1041090695].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,96,parish_name,medium,Tên TGPSG 'Thánh Giuse' có ứng viên OSM chưa chốt: Nhà thờ Thánh Giuse [way/682412611] | Nhà Thờ Thánh Giuse [way/1041090695].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,115,parish_name,medium,Tên TGPSG 'Mai Khôi' có ứng viên OSM chưa chốt: Nhà Thờ Mai Khôi [node/6924180585].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,120,parish_name,medium,Tên TGPSG 'An Phú' có ứng viên OSM chưa chốt: Nhà thờ An Phú [way/1225233356] | Nhà Thờ An Phú [node/5777165478] | Nhà Thờ An Phú [node/9585091201].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,120,parish_name,medium,Tên TGPSG 'An Phú' có ứng viên OSM chưa chốt: Nhà thờ An Phú [way/1225233356] | Nhà Thờ An Phú [node/5777165478] | Nhà Thờ An Phú [node/9585091201].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,120,parish_name,medium,Tên TGPSG 'An Phú' có ứng viên OSM chưa chốt: Nhà thờ An Phú [way/1225233356] | Nhà Thờ An Phú [node/5777165478] | Nhà Thờ An Phú [node/9585091201].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,123,parish_name,medium,Tên TGPSG 'Đức Mẹ Hằng Cứu Giúp' có ứng viên OSM chưa chốt: Nhà Thờ Đức Mẹ Hằng Cứu Giúp [node/4423122039].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,124,parish_name,medium,Tên TGPSG 'Mai Khôi' có ứng viên OSM chưa chốt: Nhà Thờ Mai Khôi [node/6924180585].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,133,parish_name,medium,Tên TGPSG 'Đắc Lộ' có ứng viên OSM chưa chốt: Nhà thờ Đắc Lộ [way/1235472350] | Nhà thờ Đắc Lộ [node/9587309958].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,133,parish_name,medium,Tên TGPSG 'Đắc Lộ' có ứng viên OSM chưa chốt: Nhà thờ Đắc Lộ [way/1235472350] | Nhà thờ Đắc Lộ [node/9587309958].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,157,parish_name,medium,Tên TGPSG 'Khiết Tâm' có ứng viên OSM chưa chốt: Nhà Thờ Khiết Tâm [way/829864820].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,170,parish_name,medium,Tên TGPSG 'Mỹ Hòa' có ứng viên OSM chưa chốt: Nhà Thờ Mỹ Hòa [node/3377491738].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,176,parish_name,medium,Tên TGPSG 'Thánh Giuse Thợ' có ứng viên OSM chưa chốt: Nhà thờ Thánh Giuse Thợ [way/682250552] | Nhà Thờ Thánh Giuse Thợ [node/9587536843].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,176,parish_name,medium,Tên TGPSG 'Thánh Giuse Thợ' có ứng viên OSM chưa chốt: Nhà thờ Thánh Giuse Thợ [way/682250552] | Nhà Thờ Thánh Giuse Thợ [node/9587536843].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,181,parish_name,medium,Tên TGPSG 'An Phú' có ứng viên OSM chưa chốt: Nhà thờ An Phú [way/1225233356] | Nhà Thờ An Phú [node/5777165478] | Nhà Thờ An Phú [node/9585091201].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,181,parish_name,medium,Tên TGPSG 'An Phú' có ứng viên OSM chưa chốt: Nhà thờ An Phú [way/1225233356] | Nhà Thờ An Phú [node/5777165478] | Nhà Thờ An Phú [node/9585091201].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,181,parish_name,medium,Tên TGPSG 'An Phú' có ứng viên OSM chưa chốt: Nhà thờ An Phú [way/1225233356] | Nhà Thờ An Phú [node/5777165478] | Nhà Thờ An Phú [node/9585091201].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,185,parish_name,medium,Tên TGPSG 'Khánh Hội' có ứng viên OSM chưa chốt: Nhà thờ Khánh Hội [way/192214961] | Nhà Thờ Khánh Hội [way/1474294608].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,185,parish_name,medium,Tên TGPSG 'Khánh Hội' có ứng viên OSM chưa chốt: Nhà thờ Khánh Hội [way/192214961] | Nhà Thờ Khánh Hội [way/1474294608].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,190,parish_name,medium,Tên TGPSG 'Thánh Giuse' có ứng viên OSM chưa chốt: Nhà thờ Thánh Giuse [way/682412611] | Nhà Thờ Thánh Giuse [way/1041090695].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,190,parish_name,medium,Tên TGPSG 'Thánh Giuse' có ứng viên OSM chưa chốt: Nhà thờ Thánh Giuse [way/682412611] | Nhà Thờ Thánh Giuse [way/1041090695].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,191,parish_name,medium,Tên TGPSG 'Thuận Phát' có ứng viên OSM chưa chốt: Nhà thờ Thuận Phát [way/377422765] | Nhà Thờ Thuận Phát [way/838400065].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,191,parish_name,medium,Tên TGPSG 'Thuận Phát' có ứng viên OSM chưa chốt: Nhà thờ Thuận Phát [way/377422765] | Nhà Thờ Thuận Phát [way/838400065].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,196,parish_name,medium,Tên TGPSG 'Đức Mẹ Hằng Cứu Giúp' có ứng viên OSM chưa chốt: Nhà Thờ Đức Mẹ Hằng Cứu Giúp [node/4423122039].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,202,parish_name,medium,Tên TGPSG 'Lạng Sơn' có ứng viên OSM chưa chốt: Nhà thờ Lạng Sơn [way/327447647] | Nhà thờ Lạng Sơn [node/9593240655].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,202,parish_name,medium,Tên TGPSG 'Lạng Sơn' có ứng viên OSM chưa chốt: Nhà thờ Lạng Sơn [way/327447647] | Nhà thờ Lạng Sơn [node/9593240655].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+tgpsaigon_parishes.csv,204,parish_name,medium,Tên TGPSG 'Tân Hưng' có ứng viên OSM chưa chốt: Nhà Thờ Tân Hưng [way/834920039].,Đối chiếu thủ công bằng địa chỉ/giáo hạt/tọa độ nếu có.
+osm_churches.csv,"27,161",parish_name,medium,Tên trùng 'Nhà thờ Lạng Sơn' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+osm_churches.csv,"40,129",parish_name,medium,Tên trùng 'Nhà thờ Hưng Phú' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+osm_churches.csv,"54,57",parish_name,medium,Tên trùng 'Tu viện Mân Côi' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+osm_churches.csv,"106,155",parish_name,medium,Tên trùng 'Nhà thờ Đắc Lộ' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+osm_churches.csv,"125,138",parish_name,medium,Tên trùng 'Nhà Thờ An Phú' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"9,132",parish_name,medium,Tên trùng 'Bình Thuận' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"13,39",parish_name,medium,Tên trùng 'Mông Triệu' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"18,157",parish_name,medium,Tên trùng 'Khiết Tâm' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"20,186",parish_name,medium,Tên trùng 'Mẫu Tâm' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"38,156",parish_name,medium,Tên trùng 'Hiển Linh' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"42,147",parish_name,medium,Tên trùng 'Thánh Martinô' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"43,160",parish_name,medium,Tên trùng 'Thánh Nguyễn Duy Khang' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"54,96,190",parish_name,medium,Tên trùng 'Thánh Giuse' xuất hiện 3 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"67,170",parish_name,medium,Tên trùng 'Mỹ Hòa' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"71,204",parish_name,medium,Tên trùng 'Tân Hưng' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"97,149",parish_name,medium,Tên trùng 'Thánh Phaolô' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"115,124",parish_name,medium,Tên trùng 'Mai Khôi' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"117,148",parish_name,medium,Tên trùng 'Thánh Phanxicô Xaviê' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"120,181",parish_name,medium,Tên trùng 'An Phú' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+tgpsaigon_parishes.csv,"123,196",parish_name,medium,Tên trùng 'Đức Mẹ Hằng Cứu Giúp' xuất hiện 2 lần; không tự gộp.,Đánh giá địa chỉ/tọa độ và danh tính riêng từng bản ghi.
+osm_churches.csv,8,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Khánh Hội'; candidates: Khánh Hội,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,16,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Mông Triệu'; candidates: Mông Triệu | Mông Triệu,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,27,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Lạng Sơn'; candidates: Lạng Sơn,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,35,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Thuận Phát'; candidates: Thuận Phát,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,40,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Hưng Phú'; candidates: Hưng Phú,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,56,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Thánh Mẫu'; candidates: Thánh Mẫu,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,74,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Thánh Giuse Thợ'; candidates: Thánh Giuse Thợ,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,75,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Thánh Giuse'; candidates: Thánh Giuse | Thánh Giuse | Thánh Giuse,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,84,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Khiết Tâm'; candidates: Khiết Tâm | Khiết Tâm,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,85,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Tân Hưng'; candidates: Tân Hưng | Tân Hưng,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,90,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Thuận Phát'; candidates: Thuận Phát,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,95,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Thánh Giuse'; candidates: Thánh Giuse | Thánh Giuse | Thánh Giuse,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,104,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ An Phú'; candidates: An Phú | An Phú,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,106,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Đắc Lộ'; candidates: Đắc Lộ,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,110,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Khánh Hội'; candidates: Khánh Hội,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,116,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Mỹ Hòa'; candidates: Mỹ Hòa | Mỹ Hòa,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,118,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Đức Mẹ Hằng Cứu Giúp'; candidates: Đức Mẹ Hằng Cứu Giúp | Đức Mẹ Hằng Cứu Giúp,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,125,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ An Phú'; candidates: An Phú | An Phú,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,127,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Mai Khôi'; candidates: Mai Khôi | Mai Khôi,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,129,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Hưng Phú'; candidates: Hưng Phú,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,138,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ An Phú'; candidates: An Phú | An Phú,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,145,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Thánh Mẫu'; candidates: Thánh Mẫu,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,155,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Đắc Lộ'; candidates: Đắc Lộ,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,158,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà Thờ Thánh Giuse Thợ'; candidates: Thánh Giuse Thợ,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
+osm_churches.csv,161,parish_name,high,Quan hệ ghép tên mơ hồ cho 'Nhà thờ Lạng Sơn'; candidates: Lạng Sơn,Xem manual_review.csv; quyết định bằng thông tin địa chỉ/giáo hạt/vị trí.
