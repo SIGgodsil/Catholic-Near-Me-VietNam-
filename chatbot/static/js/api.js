@@ -23,6 +23,10 @@ export function fetchNearby(lat, lon, radiusKm) {
   return getJson(`/api/churches/nearby?${qs}`, "Không tải được danh sách nhà thờ.");
 }
 
+export function fetchHealth() {
+  return getJson("/api/health", "Không kết nối được máy chủ.");
+}
+
 export async function geocode(query) {
   const qs = new URLSearchParams({ q: query });
   const data = await getJson(`/api/geocode?${qs}`, "Không tìm được địa chỉ.");

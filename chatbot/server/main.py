@@ -46,7 +46,8 @@ def _ollama_status() -> str:
 
 @app.get("/api/health")
 def health() -> dict:
-    return {"status": "ok", "churches": len(churches()), "ollama": _ollama_status(), "model": OLLAMA_MODEL}
+    return {"status": "ok", "churches": len(churches()), "scope_note": SCOPE_NOTE,
+            "ollama": _ollama_status(), "model": OLLAMA_MODEL}
 
 
 @app.get("/api/churches/nearby")

@@ -1,5 +1,5 @@
 // Điều phối trang: định vị, tìm địa chỉ, gọi API và hiển thị kết quả.
-import { fetchNearby, geocode } from "./api.js";
+import { fetchHealth, fetchNearby, geocode } from "./api.js";
 import { esc, formatDistance } from "./format.js";
 import { createMap } from "./map.js";
 import { nextMassText } from "./popup.js";
@@ -30,13 +30,15 @@ function setStatus(kind, title, ...notes) {
     `<p class="status-title">${esc(title)}</p>` + notes.filter(Boolean).map((n) => `<p class="note">${esc(n)}</p>`).join("");
 }
 
-function showIntro() {
-  setStatus(
-    "",
-    "Tìm nhà thờ trong bán kính 3 km",
-    "Bấm “Tìm nhà thờ gần tôi” để dùng vị trí hiện tại, hoặc nhập địa chỉ vào ô tìm kiếm.",
-    "Dữ liệu hiện có 80 nhà thờ thuộc Tổng Giáo phận Sài Gòn.",
-  );
+async function showIntro() {
+  const intro = ["", "Tìm nhà thờ trong bán kính 3 km", "Bấm “Tìm nhà thờ gần tôi” để dùng vị trí hiện tại, hoặc nhập địa chỉ vào ô tìm kiếm."];
+  setStatus(...intro);
+  try {
+    const health = await fetchHealth();
+    if (!state.location) setStatus(...intro, health.scope_note);
+  } catch (err) {
+    setStatus("error", "Không kết nối được máy chủ.", "Kiểm tra server còn chạy không rồi tải lại trang.");
+  }
 }
 
 // ---------- Danh sách kết quả ----------

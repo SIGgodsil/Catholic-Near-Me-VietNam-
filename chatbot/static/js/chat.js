@@ -131,7 +131,7 @@ function updateSubtitle() {
   const loc = state.location;
   els.subtitle.textContent = loc
     ? `Đang dùng vị trí: ${loc.label || "vị trí của bạn"}`
-    : "Trả lời dựa trên dữ liệu 80 nhà thờ";
+    : "Trả lời dựa trên dữ liệu có sẵn";
 }
 
 // ---------- Gửi câu hỏi ----------
