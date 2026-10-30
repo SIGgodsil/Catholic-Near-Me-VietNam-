@@ -1,6 +1,6 @@
-"""Đọc CSV gốc (chỉ đọc) và tạo lại chatbot/data/churches.db.
+"""Đọc CSV gốc (chỉ đọc) và tạo lại data/churches.db.
 
-Chạy: .venv\\Scripts\\python.exe scripts\\build_db.py [đường_dẫn_csv]
+Chạy từ thư mục gốc dự án: python scripts\\build_db.py [đường_dẫn_csv]
 """
 import csv
 import sqlite3

@@ -1,0 +1,8 @@
+# Lưu văn bản trong Git với LF, Windows tự đổi khi checkout.
+* text=auto
+*.ps1 text eol=crlf
+
+*.xlsx binary
+*.docx binary
+*.png binary
+*.db binary

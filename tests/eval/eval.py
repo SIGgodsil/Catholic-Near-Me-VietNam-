@@ -1,13 +1,13 @@
 """Chạy bộ câu hỏi kiểm thử. Đáp án kỳ vọng tính bằng SQL viết tay trên DB hiện tại.
 
-Chạy: .venv\\Scripts\\python.exe tests\\eval.py [--model qwen2.5:7b] [--llm-intro]
+Chạy từ thư mục gốc dự án: python tests\\eval\\eval.py [--model qwen2.5:7b] [--llm-intro]
 """
 import argparse
 import json
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 sys.stdout.reconfigure(encoding="utf-8")
 
 from src.bot import answer

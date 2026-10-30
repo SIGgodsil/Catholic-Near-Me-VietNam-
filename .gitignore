@@ -5,13 +5,16 @@ __pycache__/
 *.pyc
 .pytest_cache/
 
-# File sinh ra khi chạy (tạo lại bằng chatbot/scripts/build_db.py)
-chatbot/data/*.db
-chatbot/data/*.tmp
+# File sinh ra khi chạy (tạo lại bằng scripts/build_db.py)
+data/*.db
+data/*.tmp
 
 # Báo cáo Word, file tạm Office
 *.docx
 ~$*
+
+# Thư mục Vercel CLI tạo khi liên kết dự án
+.vercel/
 
 # Cấu hình cá nhân của Claude Code
 .claude/settings.local.json

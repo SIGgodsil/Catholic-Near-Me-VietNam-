@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # Dataset gốc chỉ được đọc, không bao giờ ghi.
 SOURCE_CSV = Path(os.getenv(
     "CHURCH_CSV",
-    ROOT.parent / "data" / "processed" / "dataset_fork2" / "catholic_churches_complete.csv",
+    ROOT / "data" / "processed" / "catholic_churches_complete.csv",
 ))
 DB_PATH = Path(os.getenv("CHURCH_DB", ROOT / "data" / "churches.db"))
 

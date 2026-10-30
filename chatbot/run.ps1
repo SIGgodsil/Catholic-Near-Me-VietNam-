@@ -1,7 +1,0 @@
-# Chạy web Catholic Near Me trên máy này: http://localhost:8000
-# Chỉ nghe ở 127.0.0.1, máy khác trong mạng không truy cập được.
-Set-Location $PSScriptRoot
-if (-not (Test-Path "data\churches.db")) {
-    .venv\Scripts\python.exe scripts\build_db.py
-}
-.venv\Scripts\python.exe -m uvicorn server.main:app --host 127.0.0.1 --port 8000

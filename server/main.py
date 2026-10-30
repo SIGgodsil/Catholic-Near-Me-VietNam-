@@ -1,5 +1,5 @@
-"""Backend web. Chạy (trong thư mục chatbot):
-    .venv\\Scripts\\python.exe -m uvicorn server.main:app --host 127.0.0.1 --port 8000
+"""Backend web. Chạy từ thư mục gốc dự án: scripts\\run.ps1
+(hoặc: python -m uvicorn server.main:app --host 127.0.0.1 --port 8000)
 """
 import datetime as dt
 import logging
