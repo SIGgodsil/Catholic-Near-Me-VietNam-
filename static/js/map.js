@@ -27,7 +27,9 @@ const USER_ICON = L.divIcon({ className: "user-dot", html: "<span></span>", icon
 export function createMap(element, { onChurchSelect } = {}) {
   const map = L.map(element, { zoomControl: false }).setView(INITIAL_VIEW.center, INITIAL_VIEW.zoom);
   L.control.zoom({ position: "topright", zoomInTitle: "Phóng to", zoomOutTitle: "Thu nhỏ" }).addTo(map);
-  L.tileLayer(TILE_URL, { maxZoom: 19, attribution: ATTRIBUTION }).addTo(map);
+  // OSM chặn ảnh bản đồ khi thiếu Referer; đặt rõ để trình duyệt trong Zalo/Facebook vẫn gửi.
+  L.tileLayer(TILE_URL, { maxZoom: 19, attribution: ATTRIBUTION, referrerPolicy: "strict-origin-when-cross-origin" })
+    .addTo(map);
 
   const userLayer = L.layerGroup().addTo(map);
   const churchLayer = L.layerGroup().addTo(map);
