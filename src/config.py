@@ -10,7 +10,7 @@ SOURCE_CSV = Path(os.getenv(
 ))
 DB_PATH = Path(os.getenv("CHURCH_DB", ROOT / "data" / "churches.db"))
 
-OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:7b")
-# Lần gọi đầu phải nạp model vào RAM nên có thể mất vài chục giây trên CPU.
-OLLAMA_TIMEOUT = float(os.getenv("OLLAMA_TIMEOUT", "120"))
+# Lấy key miễn phí tại https://aistudio.google.com/apikey. Không đưa key vào Git.
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
+GEMINI_TIMEOUT = float(os.getenv("GEMINI_TIMEOUT", "30"))

@@ -1,10 +1,12 @@
-"""Chatbot qua API và câu hỏi "gần tôi". Phần LLM được giả lập để test không cần Ollama."""
+"""Chatbot qua API và câu hỏi "gần tôi". Phần LLM được giả lập để test không cần gọi Gemini."""
 import pytest
 from fastapi.testclient import TestClient
 
 import server.main as main
 import src.bot as bot
+import src.llm as llm
 from src.db import Filters, churches
+from src.llm import LLMError
 
 client = TestClient(main.app)
 
@@ -69,13 +71,28 @@ def test_chat_api_session_and_location(monkeypatch):
     assert seen["context"] is None
 
 
-def test_chat_api_ollama_down(monkeypatch):
+def test_chat_api_llm_down(monkeypatch):
     def down(*a, **kw):
-        raise ConnectionError("Failed to connect to Ollama")
+        raise LLMError("Không kết nối được Gemini")
 
     monkeypatch.setattr(main, "answer", down)
     r = client.post("/api/chat", json={"message": "giờ lễ Tân Định"})
-    assert r.status_code == 503 and "Ollama" in r.json()["detail"]
+    assert r.status_code == 503 and r.json()["detail"] == main.LLM_DOWN
+
+
+def test_chat_api_llm_quota(monkeypatch):
+    def quota(*a, **kw):
+        raise LLMError("429", quota=True)
+
+    monkeypatch.setattr(main, "answer", quota)
+    r = client.post("/api/chat", json={"message": "giờ lễ Tân Định"})
+    assert r.status_code == 503 and r.json()["detail"] == main.LLM_QUOTA
+
+
+def test_llm_requires_key(monkeypatch):
+    monkeypatch.setattr(llm, "GEMINI_API_KEY", "")
+    with pytest.raises(LLMError):
+        llm.generate("sys", "hi")
 
 
 def test_chat_api_rejects_empty_and_too_long():
@@ -102,3 +119,43 @@ def test_toi_nay_means_today():
     assert rule_days("nhà thờ nào có lễ tối nay", today=sun) == [6]
     assert rule_days("le sang nay o go vap", today=sun) == [6]
     assert rule_days("lễ tối thứ 7", today=sun) == [5]
+
+
+def test_llm_sends_schema_and_parses_reply(monkeypatch):
+    sent = {}
+
+    class Resp:
+        status_code = 200
+        text = ""
+
+        def json(self):
+            return {"candidates": [{"content": {"parts": [{"text": "nghĩ", "thought": True}, {"text": '{"a":1}'}]}}]}
+
+    def fake_post(url, json, timeout, headers):
+        sent.update(url=url, body=json, headers=headers)
+        return Resp()
+
+    monkeypatch.setattr(llm, "GEMINI_API_KEY", "test-key")
+    monkeypatch.setattr(llm.httpx, "post", fake_post)
+    assert llm.generate("sys", "hi", model="m", json_schema={"type": "object"}) == '{"a":1}'
+    assert sent["url"].endswith("/models/m:generateContent") and sent["headers"]["x-goog-api-key"] == "test-key"
+    cfg = sent["body"]["generationConfig"]
+    assert cfg["responseMimeType"] == "application/json" and cfg["responseJsonSchema"] == {"type": "object"}
+
+
+def test_llm_retries_when_overloaded(monkeypatch):
+    codes = [503, 503, 200]
+
+    class Resp:
+        text = "busy"
+
+        def __init__(self):
+            self.status_code = codes.pop(0)
+
+        def json(self):
+            return {"candidates": [{"content": {"parts": [{"text": "ok"}]}}]}
+
+    monkeypatch.setattr(llm, "GEMINI_API_KEY", "test-key")
+    monkeypatch.setattr(llm.httpx, "post", lambda *a, **kw: Resp())
+    monkeypatch.setattr(llm.time, "sleep", lambda s: None)
+    assert llm.generate("sys", "hi") == "ok" and not codes

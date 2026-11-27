@@ -6,16 +6,15 @@ import logging
 import re
 from pathlib import Path
 
-import httpx
-import ollama
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from src.answer import MAX_DETAILED
 from src.bot import SCOPE_NOTE, answer
-from src.config import OLLAMA_HOST, OLLAMA_MODEL
+from src.config import GEMINI_API_KEY, GEMINI_MODEL
 from src.db import churches
+from src.llm import LLMError
 from src.nearby import DEFAULT_RADIUS_KM, find_nearby
 from src.schedule import TZ, UPCOMING_WINDOW_MIN, now_vn
 
@@ -29,25 +28,16 @@ log = logging.getLogger("catholic_near_me")
 app = FastAPI(title="Catholic Near Me")
 sessions = SessionStore()
 
-OLLAMA_DOWN = ("Trợ lý đang tạm nghỉ vì không kết nối được với mô hình AI (Ollama). "
-               "Bạn vẫn dùng bản đồ bình thường; hãy thử hỏi lại sau ít phút.")
-OLLAMA_ERRORS = (ConnectionError, httpx.HTTPError, ollama.ResponseError)
-
-
-def _ollama_status() -> str:
-    """ok | no_model | down. Chỉ gọi Ollama ở localhost, cổng của Ollama không mở ra ngoài."""
-    try:
-        r = httpx.get(f"{OLLAMA_HOST}/api/tags", timeout=2)
-        names = {m.get("name") for m in r.json().get("models", [])}
-    except (httpx.HTTPError, ValueError):
-        return "down"
-    return "ok" if OLLAMA_MODEL in names or f"{OLLAMA_MODEL}:latest" in names else "no_model"
+LLM_DOWN = ("Trợ lý đang tạm nghỉ vì không kết nối được với mô hình AI. "
+            "Bạn vẫn dùng bản đồ bình thường; hãy thử hỏi lại sau ít phút.")
+LLM_QUOTA = ("Hôm nay trợ lý đã trả lời quá nhiều câu hỏi nên tạm nghỉ. "
+             "Bạn vẫn dùng bản đồ bình thường; hãy thử hỏi lại sau.")
 
 
 @app.get("/api/health")
 def health() -> dict:
     return {"status": "ok", "churches": len(churches()), "scope_note": SCOPE_NOTE,
-            "ollama": _ollama_status(), "model": OLLAMA_MODEL}
+            "llm": "ok" if GEMINI_API_KEY else "no_key", "model": GEMINI_MODEL}
 
 
 @app.get("/api/churches/nearby")
@@ -96,9 +86,9 @@ def chat(req: ChatRequest) -> dict:
     near = (req.lat, req.lon) if req.lat is not None and req.lon is not None else None
     try:
         r = answer(req.message.strip(), context=sessions.get(sid), near=near)
-    except OLLAMA_ERRORS as e:
-        log.warning("Ollama lỗi: %r", e)
-        raise HTTPException(503, OLLAMA_DOWN) from e
+    except LLMError as e:
+        log.warning("Gemini lỗi: %s", e)
+        raise HTTPException(503, LLM_QUOTA if e.quota else LLM_DOWN) from e
     except Exception as e:
         log.exception("Lỗi khi trả lời câu hỏi")
         raise HTTPException(500, "Xin lỗi, mình gặp lỗi khi xử lý câu hỏi này. Bạn thử hỏi cách khác nhé.") from e

@@ -1,17 +1,14 @@
 """Ghép câu trả lời từ kết quả truy vấn. Mọi giờ lễ/địa chỉ hiển thị đều lấy trực tiếp từ DB."""
 import re
 
-import ollama
-
-from .config import OLLAMA_HOST, OLLAMA_MODEL, OLLAMA_TIMEOUT
+from .config import GEMINI_MODEL
 from .db import ChurchHit, Filters
 from .extract import PERIODS
+from .llm import generate
 from .normalize import DAY_LABELS
 
 MAX_DETAILED = 8
 PERIOD_LABELS = {"sang": "sáng", "trua": "trưa", "chieu": "chiều", "toi": "tối"}
-
-_client = ollama.Client(host=OLLAMA_HOST, timeout=OLLAMA_TIMEOUT)
 
 
 def fmt_km(km: float) -> str:
@@ -100,24 +97,19 @@ def template_intro(f: Filters, hits: list[ChurchHit]) -> str:
     return f"Tìm thấy {len(hits)} nhà thờ phù hợp{cond}:"
 
 
-def llm_intro(question: str, f: Filters, hits: list[ChurchHit], model: str = OLLAMA_MODEL) -> str | None:
+def llm_intro(question: str, f: Filters, hits: list[ChurchHit], model: str = GEMINI_MODEL) -> str | None:
     """1–2 câu mở đầu tự nhiên. Bị loại nếu LLM chèn giờ giấc (chỉ bảng dữ liệu được nêu giờ)."""
     base = template_intro(f, hits).rstrip(":")
-    resp = _client.chat(
-        model=model,
-        messages=[
-            {"role": "system", "content": (
-                "Bạn là trợ lý tra cứu giờ lễ nhà thờ Công giáo. Người dùng hỏi một câu, hệ thống đã tra cứu và có "
-                "CÂU GỐC tóm tắt kết quả. Hãy viết lại CÂU GỐC thành 1 câu tiếng Việt tự nhiên, thân thiện, trả lời "
-                "đúng ý câu hỏi. Giữ nguyên số lượng và điều kiện; nếu có lọc buổi/thứ thì nói là 'có lễ' vào lúc đó. "
-                "KHÔNG thêm giờ lễ, địa chỉ, tên nhà thờ hay thông tin nào không có trong CÂU GỐC. "
-                "Chi tiết sẽ được hiển thị ngay bên dưới câu của bạn.")},
-            {"role": "user", "content": f"Câu hỏi: {question}\nCÂU GỐC: {base}"},
-        ],
-        options={"temperature": 0.2, "num_predict": 120},
-        keep_alive="30m",
-    )
-    text = resp.message.content.strip().strip('"')
+    text = generate(
+        (
+            "Bạn là trợ lý tra cứu giờ lễ nhà thờ Công giáo. Người dùng hỏi một câu, hệ thống đã tra cứu và có "
+            "CÂU GỐC tóm tắt kết quả. Hãy viết lại CÂU GỐC thành 1 câu tiếng Việt tự nhiên, thân thiện, trả lời "
+            "đúng ý câu hỏi. Giữ nguyên số lượng và điều kiện; nếu có lọc buổi/thứ thì nói là 'có lễ' vào lúc đó. "
+            "KHÔNG thêm giờ lễ, địa chỉ, tên nhà thờ hay thông tin nào không có trong CÂU GỐC. "
+            "Chi tiết sẽ được hiển thị ngay bên dưới câu của bạn."),
+        f"Câu hỏi: {question}\nCÂU GỐC: {base}",
+        model=model, temperature=0.2, max_tokens=120,
+    ).strip().strip('"')
     # Chỉ chấp nhận các con số đã có trong câu gốc (số lượng, giờ của điều kiện lọc).
     if not text or set(re.findall(r"\d+", text)) - set(re.findall(r"\d+", base)):
         return None

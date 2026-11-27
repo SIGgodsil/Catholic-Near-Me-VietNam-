@@ -4,12 +4,12 @@ import json
 import re
 from typing import Literal
 
-import ollama
 from pydantic import BaseModel, Field
 from rapidfuzz import fuzz
 
-from .config import OLLAMA_HOST, OLLAMA_MODEL, OLLAMA_TIMEOUT
+from .config import GEMINI_MODEL
 from .db import Filters
+from .llm import generate
 from .normalize import norm
 
 DAY_KEYS = ["thu_hai", "thu_ba", "thu_tu", "thu_nam", "thu_sau", "thu_bay", "chu_nhat"]
@@ -69,18 +69,9 @@ Q: Nhà thờ trên đường Lê Văn Sỹ
 Q: Hôm nay trời có mưa không?
 {"y_dinh":"khac","ten_nha_tho":null,"quan":null,"phuong":null,"dia_diem":null,"giao_phan":null,"thu":[],"buoi":null,"gio_tu":null,"gio_den":null}"""
 
-_client = ollama.Client(host=OLLAMA_HOST, timeout=OLLAMA_TIMEOUT)
-
-
-def llm_extract(question: str, model: str = OLLAMA_MODEL) -> LLMFilters:
-    resp = _client.chat(
-        model=model,
-        messages=[{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": f"Q: {question}"}],
-        format=LLMFilters.model_json_schema(),
-        options={"temperature": 0},
-        keep_alive="30m",
-    )
-    return LLMFilters.model_validate_json(resp.message.content)
+def llm_extract(question: str, model: str = GEMINI_MODEL) -> LLMFilters:
+    text = generate(SYSTEM_PROMPT, f"Q: {question}", model=model, json_schema=LLMFilters.model_json_schema())
+    return LLMFilters.model_validate_json(text)
 
 
 # ---------- luật cố định ----------
@@ -169,7 +160,7 @@ def _grounded(value: str | None, question: str) -> str | None:
     return value.strip() if v_core in q or fuzz.partial_ratio(v_core, q) >= 85 else None
 
 
-def extract(question: str, model: str = OLLAMA_MODEL) -> tuple[Filters, dict]:
+def extract(question: str, model: str = GEMINI_MODEL) -> tuple[Filters, dict]:
     llm = llm_extract(question, model)
     debug = {"llm": llm.model_dump()}
 

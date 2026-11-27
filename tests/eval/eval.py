@@ -1,17 +1,18 @@
 """Chạy bộ câu hỏi kiểm thử. Đáp án kỳ vọng tính bằng SQL viết tay trên DB hiện tại.
 
-Chạy từ thư mục gốc dự án: python tests\\eval\\eval.py [--model qwen2.5:7b] [--llm-intro]
+Chạy từ thư mục gốc dự án: python tests\\eval\\eval.py [--model gemini-3.5-flash-lite] [--llm-intro]
 """
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 sys.stdout.reconfigure(encoding="utf-8")
 
 from src.bot import answer
-from src.config import OLLAMA_MODEL
+from src.config import GEMINI_MODEL
 
 
 def check(case: dict, r) -> list[str]:
@@ -33,14 +34,17 @@ def check(case: dict, r) -> list[str]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default=OLLAMA_MODEL)
+    ap.add_argument("--model", default=GEMINI_MODEL)
     ap.add_argument("--llm-intro", action="store_true")
+    # Gói miễn phí Gemini giới hạn khoảng 15 request/phút; --llm-intro gọi 2 lần mỗi câu nên cần giãn gấp đôi.
+    ap.add_argument("--delay", type=float, default=5, help="giây nghỉ giữa các câu (0 = không nghỉ)")
     args = ap.parse_args()
 
     cases = json.loads((Path(__file__).parent / "questions.json").read_text(encoding="utf-8"))
     passed, times = 0, []
     for i, case in enumerate(cases, 1):
         r = answer(case["q"], use_llm_intro=args.llm_intro, model=args.model)
+        time.sleep(args.delay * (2 if args.llm_intro else 1))
         errs = check(case, r)
         passed += not errs
         times.append(r.debug.get("t_total", 0))
@@ -58,6 +62,7 @@ def main() -> None:
         ctx = None
         for case in conv["turns"]:
             r = answer(case["q"], use_llm_intro=args.llm_intro, model=args.model, context=ctx)
+            time.sleep(args.delay * (2 if args.llm_intro else 1))
             ctx = r.context
             errs = check(case, r)
             t_pass += not errs
