@@ -30,9 +30,17 @@ export function nextMassHtml(c) {
   return `<p class="pp-next">${esc(nextMassText(c.next_mass))}</p>`;
 }
 
-// "Lễ lúc 17:30, còn 45 phút" / "Lễ lúc 00:30 (ngày mai), còn 90 phút"
+// 45 -> "45 phút", 60 -> "1 giờ", 107 -> "1 giờ 47 phút"
+function formatDuration(minutes) {
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  if (!h) return `${m} phút`;
+  return m ? `${h} giờ ${m} phút` : `${h} giờ`;
+}
+
+// "Lễ lúc 17:30, còn 45 phút" / "Lễ lúc 00:30 (ngày mai), còn 1 giờ 30 phút"
 export function nextMassText(m) {
-  const when = m.minutes_until === 0 ? "bắt đầu ngay bây giờ" : `còn ${m.minutes_until} phút`;
+  const when = m.minutes_until === 0 ? "bắt đầu ngay bây giờ" : `còn ${formatDuration(m.minutes_until)}`;
   return `Lễ lúc ${m.time}${m.tomorrow ? " (ngày mai)" : ""}, ${when}`;
 }
 
