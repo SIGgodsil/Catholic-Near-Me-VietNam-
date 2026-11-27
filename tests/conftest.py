@@ -1,4 +1,4 @@
-"""Test chạy trên một bản DB tạm build từ CSV gốc, không đụng tới data/churches.db và không cần Ollama."""
+"""Test chạy trên một bản DB tạm build từ CSV gốc, không đụng tới data/churches.db và không gọi Gemini."""
 import os
 import tempfile
 from pathlib import Path

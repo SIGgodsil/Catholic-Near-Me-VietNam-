@@ -10,6 +10,10 @@ if (-not $Python) {
     exit 1
 }
 
+if (-not $env:GEMINI_API_KEY) {
+    Write-Warning "Chưa đặt GEMINI_API_KEY: bản đồ vẫn chạy nhưng chatbot sẽ báo lỗi. Xem mục Cài đặt trong README.md."
+}
+
 if (-not (Test-Path "data\churches.db")) {
     & $Python scripts\build_db.py
 }

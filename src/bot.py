@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 
 from .answer import (MAX_DETAILED, describe_place_filter, describe_time_filter, hit_markdown, hits_table,
                      llm_intro, template_intro)
-from .config import OLLAMA_MODEL
+from .config import GEMINI_MODEL
 from .context import Context, ContextInfo, apply_context, has_entity
 from .db import ChurchHit, Filters, churches, search, suggest_names
 from .extract import extract
@@ -52,7 +52,7 @@ def _near_ids(near: tuple[float, float]) -> list[int]:
     return [c["id"] for c, _ in hits]
 
 
-def answer(question: str, use_llm_intro: bool = False, model: str = OLLAMA_MODEL,
+def answer(question: str, use_llm_intro: bool = False, model: str = GEMINI_MODEL,
            context: Context | None = None, near: tuple[float, float] | None = None) -> BotResponse:
     """near: (vĩ độ, kinh độ) của người dùng nếu có, dùng cho câu hỏi "gần tôi" và để ghi khoảng cách."""
     t0 = time.time()

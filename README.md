@@ -1,7 +1,7 @@
 # Catholic Near Me — tìm nhà thờ gần bạn & hỏi đáp giờ lễ
 
 Trang web chạy trên máy này: bản đồ OpenStreetMap hiển thị các nhà thờ trong bán kính 3 km quanh vị trí của bạn,
-đánh dấu nơi có lễ trong 2 giờ tới, kèm chatbot tiếng Việt (Ollama, chạy local) trả lời từ dataset.
+đánh dấu nơi có lễ trong 2 giờ tới, kèm chatbot tiếng Việt (Gemini API, gói miễn phí) trả lời từ dataset.
 
 Dữ liệu: `data/processed/catholic_churches_complete.csv`, gồm 207 nhà thờ và 3.158 giờ lễ thuộc Tổng Giáo phận
 Sài Gòn. Ngoài TP.HCM sẽ không có kết quả. 80 nhà thờ có tọa độ từ OpenStreetMap; 127 nhà thờ còn lại thu thập từ
@@ -9,7 +9,16 @@ tgpsaigon.net, tọa độ lấy trên Google Maps bằng `scripts/gpm/gmaps_coo
 
 ## Cài đặt (một lần)
 
-Cần Python 3.13, cùng Ollama đang chạy tại `http://localhost:11434` và đã có model `qwen2.5:7b`.
+Cần Python 3.13 và một Gemini API key miễn phí, lấy tại https://aistudio.google.com/apikey (không cần thẻ).
+Không liên kết tài khoản thanh toán với project của key, nếu không mọi lượt gọi sẽ bị tính tiền.
+
+Đặt key một lần cho tài khoản Windows (mở lại PowerShell sau khi chạy):
+
+```powershell
+setx GEMINI_API_KEY "key-của-bạn"
+```
+
+Không đưa key vào code hay Git. Khi deploy (Vercel, Render...), đặt `GEMINI_API_KEY` trong phần Environment Variables.
 
 ```powershell
 cd "C:\Users\ADMIN\OneDrive\Desktop\Personel Project\CatholicNearMe project\chatbot"
@@ -39,9 +48,9 @@ Không nên dùng `--reload`, vì trên Windows chế độ này đôi khi bị 
 
 - **Chỉ chạy trên máy này.** Server nghe ở `127.0.0.1`, máy khác trong mạng không truy cập được.
   Trình duyệt coi `http://localhost` là ngữ cảnh an toàn nên định vị vẫn chạy mà không cần HTTPS.
-- **Ollama chỉ nghe ở localhost.** Chỉ backend gọi Ollama, trình duyệt không gọi thẳng tới Ollama.
+- **Chỉ backend gọi Gemini.** Key nằm ở server, trình duyệt không thấy key.
 - Cần Internet cho tile bản đồ OSM, thư viện Leaflet (unpkg), font Google và chức năng tìm địa chỉ (Nominatim).
-  Chatbot và dữ liệu nhà thờ chạy offline.
+  Chatbot cần Internet để gọi Gemini; dữ liệu nhà thờ nằm trong SQLite trên server.
 
 ## Chức năng
 
@@ -52,7 +61,7 @@ Không nên dùng `--reload`, vì trên Windows chế độ này đôi khi bị 
 | Bán kính 3 km | Tính bằng Haversine ở backend, vẽ vòng tròn trên bản đồ. Không có nhà thờ nào trong bán kính thì báo rõ |
 | Popup | Tên, giáo xứ, địa chỉ, khoảng cách, giờ lễ gộp theo ngày, liên hệ, link nguồn, chỉ đường (OSM). Trường trống bị ẩn |
 | Lễ sắp diễn ra | Ghim đỏ khi có lễ bắt đầu trong [bây giờ, bây giờ + 120 phút] theo giờ Asia/Ho_Chi_Minh, tính cả trường hợp qua nửa đêm. Trang tự làm mới mỗi phút |
-| Chatbot | Nút góc phải dưới. Đã định vị thì câu hỏi “gần tôi” tìm trong 3 km quanh vị trí đó. Chatbot không điều khiển bản đồ. Khi Ollama tắt sẽ hiện thông báo lỗi thân thiện |
+| Chatbot | Nút góc phải dưới. Đã định vị thì câu hỏi “gần tôi” tìm trong 3 km quanh vị trí đó. Chatbot không điều khiển bản đồ. Khi không gọi được Gemini hoặc hết hạn mức miễn phí (lỗi 429) sẽ hiện thông báo lỗi thân thiện |
 
 **Thử giao diện ở giờ khác:** mở `http://localhost:8000/?at=2026-10-25T16:30` để giả lập thời điểm (giờ VN) khi tính lễ sắp diễn ra.
 
@@ -60,7 +69,7 @@ Không nên dùng `--reload`, vì trên Windows chế độ này đôi khi bị 
 
 | Endpoint | Mô tả |
 |---|---|
-| `GET /api/health` | Số nhà thờ, trạng thái Ollama (`ok` / `no_model` / `down`) |
+| `GET /api/health` | Số nhà thờ, model, `llm`: `ok` nếu đã đặt `GEMINI_API_KEY`, `no_key` nếu chưa (không gọi Gemini để khỏi tốn hạn mức) |
 | `GET /api/churches/nearby?lat=&lon=&radius_km=3[&at=]` | Nhà thờ trong bán kính (tối đa 20 km), gần nhất trước, kèm `next_mass` nếu có lễ trong 2 giờ tới |
 | `GET /api/geocode?q=` | Tìm tọa độ từ địa chỉ (Nominatim) |
 | `POST /api/chat` | `{message, session_id?, lat?, lon?}` → `{reply, status, session_id, table}` |
@@ -72,9 +81,9 @@ Tài liệu tự sinh xem tại http://localhost:8000/docs.
 
 | Biến | Mặc định | Ý nghĩa |
 |---|---|---|
-| `OLLAMA_HOST` | `http://localhost:11434` | Server Ollama |
-| `OLLAMA_MODEL` | `qwen2.5:7b` | Model dùng cho chatbot |
-| `OLLAMA_TIMEOUT` | `120` | Giây chờ tối đa. Lần gọi đầu phải nạp model nên chậm |
+| `GEMINI_API_KEY` | trống (bắt buộc) | Key Gemini API |
+| `GEMINI_MODEL` | `gemini-3.5-flash-lite` | Model dùng cho chatbot. Flash-Lite có hạn mức miễn phí cao hơn Flash/Pro |
+| `GEMINI_TIMEOUT` | `30` | Giây chờ tối đa mỗi lần gọi |
 | `CHURCH_CSV` / `CHURCH_DB` | xem `src/config.py` | Dataset nguồn / file SQLite |
 | `NOMINATIM_CONTACT` | trống | Email liên hệ gắn vào User-Agent (Nominatim khuyến khích) |
 | `NOMINATIM_VIEWBOX` | vùng TP.HCM | Vùng ưu tiên khi tìm địa chỉ |
@@ -103,8 +112,8 @@ Nếu dataset mới có nhiều giáo phận, cần thêm điều kiện lọc t
 ## Kiểm thử
 
 ```powershell
-.venv\Scripts\python.exe -m pytest              # 51 test, không cần Ollama, không gọi mạng
-.venv\Scripts\python.exe tests\eval.py          # chatbot với Ollama thật: 27 câu đơn + 13 lượt hội thoại
+.venv\Scripts\python.exe -m pytest              # 69 test, không gọi mạng
+.venv\Scripts\python.exe tests\eval.py          # chatbot với Gemini thật (tốn hạn mức, mất khoảng 4 phút): 28 câu đơn + 13 lượt hội thoại
 ```
 
 `pytest` kiểm tra:
@@ -118,7 +127,7 @@ Test chạy trên một bản DB tạm build từ CSV, không đụng tới `dat
 
 ```
 Câu hỏi
-  → qwen2.5:7b (Ollama, structured output theo JSON schema, temperature 0, few-shot)  [src/extract.py]
+  → Gemini (structured output theo JSON schema, temperature 0, few-shot)  [src/extract.py, src/llm.py]
   → luật cố định kiểm tra lại: thứ/buổi/giờ lấy bằng regex; tên/địa điểm phải xuất hiện trong câu hỏi
   → "gần tôi" + có vị trí → giới hạn trong các nhà thờ cách ≤ 3 km                       [src/bot.py]
   → truy vấn SQLite có tham số + so khớp không dấu / sai nhẹ (rapidfuzz)                 [src/db.py]
@@ -161,10 +170,11 @@ chatbot/
   scripts/build_db.py  CSV → data/churches.db
   src/                 logic dùng chung (chatbot, tìm kiếm, khoảng cách, lịch lễ)
     config.py, normalize.py, extract.py, context.py, db.py, answer.py, bot.py
+    llm.py             gọi Gemini API (REST qua httpx)
     geo.py             Haversine, lọc bán kính
     nearby.py          dữ liệu nhà thờ cho bản đồ
     schedule.py        lễ sắp diễn ra (Asia/Ho_Chi_Minh)
-  tests/               pytest + eval.py (Ollama thật)
+  tests/               pytest + eval.py (gọi Gemini thật, tốn hạn mức)
 ```
 
 ## Ghi chú kỹ thuật
@@ -175,6 +185,6 @@ chatbot/
   (6,8:1 trên nền trắng, đạt WCAG AA).
 - Ghim đỏ `#B42318` dành cho nhà thờ có lễ sắp diễn ra; marker người dùng là chấm xanh.
 - Giao diện Streamlit cũ (`app.py`) đã bị xóa. Các tùy chọn trong sidebar cũ nay thay bằng:
-  - đổi model: dùng biến môi trường `OLLAMA_MODEL`;
+  - đổi model: dùng biến môi trường `GEMINI_MODEL`;
   - "LLM viết câu mở đầu": vẫn còn trong code (`answer(..., use_llm_intro=True)`, `tests\eval.py --llm-intro`) nhưng web không bật;
   - xem bộ lọc đã trích: có trong `debug` khi chạy `eval.py`.

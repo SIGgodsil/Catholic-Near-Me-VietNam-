@@ -3,7 +3,6 @@ uvicorn==0.54.0
 httpx==0.28.1
 tzdata==2026.5
 rapidfuzz==3.14.6
-ollama==0.6.3
 pytest==9.1.1
 # Chỉ để chạy scripts/scrape_tgpsaigon.py, web không cần
 scrapling[fetchers]==0.5.1

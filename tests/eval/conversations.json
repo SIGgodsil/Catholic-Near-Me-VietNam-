@@ -6,19 +6,21 @@
   ]},
   {"name": "Đổi buổi, đổi khu vực, lọc trong kết quả", "turns": [
     {"q": "nha tho nao o go vap co le sang chua nhat", "status": "ok",
-     "churches": ["An Nhơn", "Hòa Bình", "Hạnh Thông Tây", "Mân Côi", "Vĩnh Hiệp", "Xóm Thuốc", "Đức Tin"]},
-    {"q": "còn buổi tối thì sao?", "status": "ok", "churches": ["An Nhơn", "Hạnh Thông Tây", "Vĩnh Hiệp", "Xóm Thuốc"]},
-    {"q": "quận Phú Nhuận thì sao?", "status": "ok", "churches": ["Phú Hạnh", "Phú Nhuận", "Tân Hòa"]},
+     "churches": ["An Nhơn", "Bến Hải", "Gò Vấp", "Hòa Bình", "Hạnh Thông Tây", "Mân Côi", "Thánh Giuse", "Vĩnh Hiệp", "Xóm Thuốc", "Đức Tin"]},
+    {"q": "còn buổi tối thì sao?", "status": "ok", "churches": ["An Nhơn", "Bến Hải", "Hạnh Thông Tây", "Vĩnh Hiệp", "Xóm Thuốc"]},
+    {"q": "quận Phú Nhuận thì sao?", "status": "ok", "churches": ["Phú Hạnh", "Phú Nhuận", "Tân Hòa", "Đa Minh"]},
     {"q": "trong đó nhà thờ nào có lễ thứ 7?", "status": "ok", "churches": ["Tân Hòa"]}
   ]},
   {"name": "Nối tiếp sau câu không tìm thấy", "turns": [
     {"q": "Nhà thờ nào ở Tân An?", "status": "not_found"},
-    {"q": "còn quận 5?", "status": "ok", "churches": ["An Bình", "Chợ Quán"]}
+    {"q": "còn quận 5?", "status": "ok", "churches": ["An Bình", "Chợ Quán", "Jeanne d'Arc", "Mai Khôi", "Thánh Phanxicô Xaviê"]}
   ]},
   {"name": "Câu mới hoàn toàn thì không kế thừa", "turns": [
     {"q": "Giờ lễ nhà thờ Chí Hòa", "status": "ok", "churches": ["Chí Hoà"]},
-    {"q": "Các nhà thờ ở quận 1", "status": "ok", "churches": ["Cầu Kho", "Mạc ty Nho", "Thánh Gia", "Đức Bà Fatima"]},
-    {"q": "lễ chiều thứ 7?", "status": "ok", "churches": ["Cầu Kho", "Mạc ty Nho", "Thánh Gia", "Đức Bà Fatima"],
+    {"q": "Các nhà thờ ở quận 1", "status": "ok",
+     "churches": ["Antôn Cầu Ông Lãnh", "Chánh Tòa", "Cầu Kho", "Mạc ty Nho", "Phanxicô Đakao", "Thánh Gia", "Trung tâm Mục vụ", "Đại Chủng Viện Thánh Giuse", "Đức Bà Fatima", "Đức Bà Hoà Bình"]},
+    {"q": "lễ chiều thứ 7?", "status": "ok",
+     "churches": ["Chánh Tòa", "Cầu Kho", "Mạc ty Nho", "Phanxicô Đakao", "Thánh Gia", "Đức Bà Fatima"],
      "contains": ["Hiểu theo câu trước"]},
     {"q": "Hôm nay thời tiết thế nào?", "status": "out_of_scope"}
   ]}
