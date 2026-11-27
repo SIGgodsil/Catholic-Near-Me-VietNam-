@@ -23,9 +23,16 @@ def test_nearby_hides_empty_fields():
     c = churches()[0]
     body = client.get("/api/churches/nearby", params={"lat": c["latitude"], "lon": c["longitude"]}).json()
     for ch in body["churches"]:
-        assert "phone" not in ch  # dataset hiện tại chưa có số điện thoại
+        assert "email" not in ch and "website" not in ch  # dataset chưa có hai cột này
         assert all(v not in (None, "", "nan", "None") for v in ch.values())
         assert ch["schedule"] and all(g["days"] and g["times"] for g in ch["schedule"])
+
+
+def test_nearby_shows_phone_when_present():
+    # Giáo xứ thu thập từ tgpsaigon.net có số điện thoại; giáo xứ cũ (OSM) thì không, và bị ẩn như trên.
+    c = next(x for x in churches() if x.get("phone"))
+    body = client.get("/api/churches/nearby", params={"lat": c["latitude"], "lon": c["longitude"]}).json()
+    assert body["churches"][0]["phone"] == c["phone"]
 
 
 def test_nearby_empty_far_away():

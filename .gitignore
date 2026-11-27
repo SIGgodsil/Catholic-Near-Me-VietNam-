@@ -18,3 +18,18 @@ data/*.tmp
 
 # Cấu hình cá nhân của Claude Code
 .claude/settings.local.json
+
+# HTML gốc khi thu thập tgpsaigon.net (tạo lại bằng scripts/scrape_tgpsaigon.py)
+data/raw/tgpsg/html/
+data/raw/tgpsg/*.tmp
+
+# Dữ liệu Google Places thô: điều khoản Google hạn chế lưu lâu dài, không đưa lên repo
+data/interim/google_places_cache.json
+
+# Bản tải nguyên repo Scrapling; skill dùng thật nằm ở .claude/skills/scrapling-official
+.claude/skills/Scrapling-main/
+.claude/skills/Scrapling-main.zip
+
+scripts/gpm/node_modules/
+data/interim/gmaps_coords_cache.json
+*.csv.bak

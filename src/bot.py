@@ -22,7 +22,7 @@ class BotResponse:
     context: Context | None = None   # truyền lại vào answer() ở lượt sau
 
 
-SCOPE_NOTE = "Dữ liệu hiện có 80 nhà thờ thuộc Tổng Giáo phận Sài Gòn (nguồn tgpsaigon.net)."
+SCOPE_NOTE = "Dữ liệu hiện có 207 nhà thờ thuộc Tổng Giáo phận Sài Gòn (nguồn tgpsaigon.net)."
 
 NEAR_RADIUS_KM = 3.0
 # "gần tôi", "gần đây", "gần nhất", "quanh đây"...

@@ -3,8 +3,9 @@
 Trang web chạy trên máy này: bản đồ OpenStreetMap hiển thị các nhà thờ trong bán kính 3 km quanh vị trí của bạn,
 đánh dấu nơi có lễ trong 2 giờ tới, kèm chatbot tiếng Việt (Ollama, chạy local) trả lời từ dataset.
 
-Dữ liệu: `data/processed/dataset_fork2/catholic_churches_complete.csv`, gồm 80 nhà thờ và 1.287 giờ lễ thuộc Tổng Giáo phận
-Sài Gòn. Ngoài TP.HCM sẽ không có kết quả.
+Dữ liệu: `data/processed/catholic_churches_complete.csv`, gồm 207 nhà thờ và 3.158 giờ lễ thuộc Tổng Giáo phận
+Sài Gòn. Ngoài TP.HCM sẽ không có kết quả. 80 nhà thờ có tọa độ từ OpenStreetMap; 127 nhà thờ còn lại thu thập từ
+tgpsaigon.net, tọa độ lấy trên Google Maps bằng `scripts/gpm/gmaps_coords.mjs` rồi gộp bằng `scripts/merge_complete.py`.
 
 ## Cài đặt (một lần)
 

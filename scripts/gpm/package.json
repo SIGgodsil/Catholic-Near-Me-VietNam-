@@ -1,0 +1,12 @@
+{
+  "name": "catholicnearme-gpm",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "coords": "node gmaps_coords.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}
