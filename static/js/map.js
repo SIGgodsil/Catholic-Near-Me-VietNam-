@@ -41,11 +41,11 @@ export function createMap(element, { onChurchSelect } = {}) {
     userLayer.clearLayers();
     origin = { lat, lon };
     if (accuracyM && accuracyM > 30) {
-      L.circle([lat, lon], { radius: accuracyM, color: "#1d6fe0", weight: 1, fillOpacity: 0.08, interactive: false })
+      L.circle([lat, lon], { radius: accuracyM, color: "#2563eb", weight: 1, fillOpacity: 0.08, interactive: false })
         .addTo(userLayer);
     }
     radiusCircle = L.circle([lat, lon], {
-      radius: radiusKm * 1000, color: "#7a5410", weight: 2, dashArray: "6 6", fillColor: "#c9a13b", fillOpacity: 0.07,
+      radius: radiusKm * 1000, color: "#1f3a5f", weight: 1.5, dashArray: "5 5", fillColor: "#1f3a5f", fillOpacity: 0.05,
       interactive: false,
     }).addTo(userLayer);
     L.marker([lat, lon], { icon: USER_ICON, title: "Vị trí của bạn", keyboard: false, zIndexOffset: 1000 })
