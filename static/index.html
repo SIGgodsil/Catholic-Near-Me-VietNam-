@@ -40,6 +40,17 @@
 
   <main class="layout">
     <aside class="panel" aria-label="Kết quả tìm kiếm">
+      <div class="radius">
+        <div class="radius-head">
+          <label for="radius-slider">Bán kính tìm</label>
+          <output id="radius-value" for="radius-slider">3 km</output>
+        </div>
+        <!-- Thanh trượt theo nấc: giá trị là vị trí trong RADIUS_CHOICES_KM (app.js). -->
+        <input id="radius-slider" type="range" min="0" max="4" step="1" value="3" aria-valuetext="3 km">
+        <div class="radius-ticks" aria-hidden="true">
+          <span>500 m</span><span>1 km</span><span>2 km</span><span>3 km</span><span>5 km</span>
+        </div>
+      </div>
       <div id="status" class="status" role="status" aria-live="polite"></div>
       <ol id="church-list" class="church-list"></ol>
     </aside>

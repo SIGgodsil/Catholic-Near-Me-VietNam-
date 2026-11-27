@@ -5,7 +5,9 @@ import { createMap } from "./map.js";
 import { nextMassText } from "./popup.js";
 import { state } from "./state.js";
 
-const RADIUS_KM = 3;
+const RADIUS_CHOICES_KM = [0.5, 1, 2, 3, 5];
+const DEFAULT_RADIUS_KM = 3;
+const RADIUS_STORAGE_KEY = "radiusKm";
 const POOR_ACCURACY_M = 500; // sai số GPS lớn hơn mức này thì gợi ý nhập địa chỉ
 const GEO_OPTIONS = { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 };
 const REFRESH_MS = 60_000; // cập nhật "còn X phút" và ghim lễ sắp diễn ra
@@ -17,7 +19,53 @@ const els = {
   results: document.getElementById("search-results"),
   status: document.getElementById("status"),
   list: document.getElementById("church-list"),
+  radiusSlider: document.getElementById("radius-slider"),
+  radiusValue: document.getElementById("radius-value"),
 };
+
+// ---------- Bán kính tìm (nhớ lựa chọn cho lần mở sau) ----------
+
+function loadRadius() {
+  let saved = NaN;
+  try {
+    saved = Number(localStorage.getItem(RADIUS_STORAGE_KEY));
+  } catch {
+    // Trình duyệt chặn localStorage (chế độ riêng tư): dùng mặc định.
+  }
+  return RADIUS_CHOICES_KM.includes(saved) ? saved : DEFAULT_RADIUS_KM;
+}
+
+let radiusKm = loadRadius();
+
+const sliderKm = () => RADIUS_CHOICES_KM[Number(els.radiusSlider.value)] ?? DEFAULT_RADIUS_KM;
+
+// Cập nhật nhãn khi đang kéo; chỉ tìm lại khi thả tay (sự kiện change) để không gọi API liên tục.
+function showSliderValue() {
+  const text = formatDistance(sliderKm());
+  els.radiusValue.textContent = text;
+  els.radiusSlider.setAttribute("aria-valuetext", text);
+  els.radiusSlider.style.setProperty("--fill", `${(els.radiusSlider.value / els.radiusSlider.max) * 100}%`);
+}
+
+els.radiusSlider.value = String(RADIUS_CHOICES_KM.indexOf(radiusKm));
+showSliderValue();
+els.radiusSlider.addEventListener("input", showSliderValue);
+
+els.radiusSlider.addEventListener("change", () => {
+  const value = sliderKm();
+  if (value === radiusKm) return;
+  radiusKm = value;
+  try {
+    localStorage.setItem(RADIUS_STORAGE_KEY, String(value));
+  } catch {
+    // Không lưu được thì chỉ áp dụng cho lần này.
+  }
+  const loc = state.location;
+  if (loc) searchAround(loc.lat, loc.lon, { label: loc.label, accuracyM: loc.accuracyM, warning: loc.warning });
+  else showIntro();
+});
+
+const radiusText = () => formatDistance(radiusKm);
 
 const map = createMap(document.getElementById("map"), { onChurchSelect: highlightListItem });
 
@@ -31,7 +79,7 @@ function setStatus(kind, title, ...notes) {
 }
 
 async function showIntro() {
-  const intro = ["", "Tìm nhà thờ trong bán kính 3 km", "Bấm “Tìm nhà thờ gần tôi” để dùng vị trí hiện tại, hoặc nhập địa chỉ vào ô tìm kiếm."];
+  const intro = ["", `Tìm nhà thờ trong bán kính ${radiusText()}`, "Bấm “Tìm nhà thờ gần tôi” để dùng vị trí hiện tại, hoặc nhập địa chỉ vào ô tìm kiếm."];
   setStatus(...intro);
   try {
     const health = await fetchHealth();
@@ -83,7 +131,7 @@ function upcomingNote(churches) {
 async function refresh() {
   if (!state.location || document.hidden) return;
   try {
-    const data = await fetchNearby(state.location.lat, state.location.lon, RADIUS_KM);
+    const data = await fetchNearby(state.location.lat, state.location.lon, radiusKm);
     map.showChurches(data.churches, { keepOpen: true });
     renderList(data.churches);
     const note = els.status.querySelector(".upcoming-note");
@@ -95,26 +143,27 @@ async function refresh() {
 
 async function searchAround(lat, lon, { label, accuracyM, warning } = {}) {
   clearInterval(refreshTimer);
-  state.location = { lat, lon, label };
-  map.showUser(lat, lon, { radiusKm: RADIUS_KM, accuracyM, label });
+  state.location = { lat, lon, label, accuracyM, warning };
+  map.showUser(lat, lon, { radiusKm, accuracyM, label });
   map.showChurches([]);
   els.list.innerHTML = "";
   setStatus("loading", "Đang tìm nhà thờ…");
   try {
-    const data = await fetchNearby(lat, lon, RADIUS_KM);
+    const data = await fetchNearby(lat, lon, radiusKm);
     map.showChurches(data.churches);
     renderList(data.churches);
     const where = label ? `quanh ${label}` : "quanh vị trí của bạn";
     if (data.count === 0) {
       setStatus(
         "warn",
-        `Không có nhà thờ nào trong bán kính ${RADIUS_KM} km.`,
+        `Không có nhà thờ nào trong bán kính ${radiusText()}.`,
         `Không tìm thấy nhà thờ ${where}.`,
+        radiusKm < Math.max(...RADIUS_CHOICES_KM) ? "Bạn thử chọn bán kính lớn hơn ở phía trên." : null,
         `${data.scope_note} Bạn thử nhập một địa chỉ khác ở TP.HCM.`,
         warning,
       );
     } else {
-      setStatus(warning ? "warn" : "", `Có ${data.count} nhà thờ trong bán kính ${RADIUS_KM} km`, `Tìm ${where}. Bấm vào ghim hoặc tên nhà thờ để xem giờ lễ.`, warning);
+      setStatus(warning ? "warn" : "", `Có ${data.count} nhà thờ trong bán kính ${radiusText()}`, `Tìm ${where}. Bấm vào ghim hoặc tên nhà thờ để xem giờ lễ.`, warning);
       const note = document.createElement("p");
       note.className = "note upcoming-note";
       note.textContent = upcomingNote(data.churches);
